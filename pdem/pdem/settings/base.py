@@ -1,3 +1,6 @@
+from django.core.exceptions import ImproperlyConfigured
+import json
+
 
 # from pathlib import Path
 from unipath import Path
@@ -10,7 +13,17 @@ BASE_DIR = Path(__file__).ancestor(3)
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h9f6ab(j)jsx5%&t5k^f%putfu3k-3qo06+ex=_$g(koz6!v1f'
+with open("secret.json") as f:
+    secret = json.loads(f.read())
+
+def get_secret(secret_name, secrets=secret):
+    try:
+        return secrets[secret_name]
+    except:
+        msg = "variable no existe %s" % secret_name
+        raise ImproperlyConfigured(msg)
+
+SECRET_KEY = get_secret('SECRET_KEY')
 
 
 # Application definition
