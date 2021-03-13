@@ -1,0 +1,279 @@
+{% extends  'base.html'%}
+
+{% block title %}
+
+<title>Productos Dentales y Equipos Médicos</title>
+
+{% endblock title %}
+
+{% block content %}
+
+<main>    
+    <!-- Business info -->
+    <div
+        class="container-fluid business-info-card business-info d-flex justify-content-center"
+    >
+        <div
+        class="row pt-3 pt-md-0 d-md-flex align-items-md-center"
+        >
+            <div class="col-12 col-md-5 col-lg-6 py-3">
+                <h1 class="fw-bold text-center">
+                    Depósito de Productos Dentales y Equipos Médicos
+                </h1>
+            </div>
+            <div class="col-12 col-md-7 col-lg-6 px-0">
+                <img src="static/img/dark-cover.jpg" class="h-100 w-100" alt="" />
+            </div>
+        </div>
+        <div
+        class="row info-search-card w-100 d-md-flex justify-content-md-center"
+        >
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-5">
+                <div class="card card-background">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-3 d-flex align-items-center">
+                                <img
+                                src="static/img/tooth-color.svg"
+                                class="w-100"
+                                alt=""
+                                />
+                            </div>
+                            <div class="col-9 text-white">
+                                <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Deserunt non illo odio excepturi id nobis architecto
+                                nihil, a ipsam eligendi!
+                                </p>
+                                <div class="row">
+                                    <div class="col-12 col-lg-9">
+                                        <div class="input-group-lg">
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="¿Qué buscas el día de hoy?"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-lg-4">
+                                        <button class="btn btn-lg btn-color fw-bold mt-3 w-100">
+                                            Buscar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ends business info -->
+
+    <!-- Carousel -->
+    <div class="container-fluid" style="margin-top: 220px">
+        <div class="row d-flex justify-content-center pt-5">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7 text-center">
+                <div class="subtitle-container">
+                <h2 class="my-0 fw-bold">Productos Destacados</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row d-md-flex justify-content-md-center my-3">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+                <p>Contamos con los productos de la más alta calidad.</p>
+            </div>
+        </div>
+        <div class="row d-md-flex justify-content-md-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7 px-0">
+                <div
+                id="carouselExampleIndicators"
+                class="carousel slide"
+                data-bs-ride="carousel"
+                >
+                    <ol class="carousel-indicators">
+                        <li
+                        data-target="#carouselExampleIndicators"
+                        data-slide-to="0"
+                        class="active"
+                        ></li>
+                        <li
+                        data-target="#carouselExampleIndicators"
+                        data-slide-to="1"
+                        ></li>
+                        <li
+                        data-target="#carouselExampleIndicators"
+                        data-slide-to="2"
+                        ></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="overlay-image slide-1"></div>
+                            <div class="carousel-caption d-block">
+                                <h3 class="text-dark fw-bold">Equipo Médico 01</h3>
+                                <p class="text-dark">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing
+                                elit. Fuga, magni!
+                                </p>
+                                <button class="btn btn-color fw-bold">Ver más</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="overlay-image slide-2"></div>
+                            <div class="carousel-caption d-block">
+                                <h3 class="text-dark fw-bold">Equipo Médico 02</h3>
+                                <p class="text-dark">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Ea, dicta.
+                                </p>
+                                <button class="btn btn-color fw-bold">Ver más</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="overlay-image slide-3"></div>
+                            <div class="carousel-caption d-block">
+                                <h3 class="text-dark fw-bold">Equipo Médico 03</h3>
+                                <p class="text-dark">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Reiciendis, eos.
+                                </p>
+                                <button class="btn btn-color fw-bold">Ver más</button>
+                            </div>
+                        </div>
+                    </div>
+                    <a
+                        href="#carouselExampleIndicators"
+                        class="carousel-control-prev"
+                        role="button"
+                        data-bs-slide="prev"
+                    >
+                        <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Previous</span>
+                    </a>
+                    <a
+                        href="#carouselExampleIndicators"
+                        class="carousel-control-next"
+                        role="button"
+                        data-bs-slide="next"
+                    >
+                        <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ends carousel -->
+
+    <!-- Categories -->
+    <div class="container-fluid categories pb-0 mb-0">
+        <div class="row d-flex justify-content-center py-5">
+            <div class="col-6 col-md-10 col-lg-8 col-xl-7 text-center">
+                <h2 class="my-0 fw-bold">Categorías</h2>
+            </div>
+        </div>
+        <div
+        class="row d-flex justify-content-center categories-container pb-5 px-lg-5"
+        >
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+                <div class="card category-card">
+                    <div class="card-img-container">
+                        <img
+                        src="static/img/medical-equipment-04.jpg"
+                        class="card-img-top h-100"
+                        alt="cubrebocas"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <h3 class="fw-bold">Higiene Bucal</h3>
+                        <p class="card-text">
+                        Productos de alta calidad para la higiene bucal.
+                        </p>
+                        <div class="text-center">
+                            <button class="btn btn-color fw-bold">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4 mt-3 m-md-0">
+                <div class="card category-card">
+                    <div class="card-img-container">
+                        <img
+                        src="static/img/medical-utensils.jpg"
+                        class="card-img-top h-100"
+                        alt="cubrebocas"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <h3 class="fw-bold">Instrumental</h3>
+                        <p class="card-text">
+                        Productos de alta calidad para la higiene bucal.
+                        </p>
+                        <div class="text-center">
+                            <button class="btn btn-color fw-bold">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4 mt-3 mt-lg-0">
+                <div class="card category-card">
+                    <div class="card-img-container">
+                        <img
+                        src="static/img/medical-uniform.jpg"
+                        class="card-img-top h-100"
+                        alt="cubrebocas"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <h3 class="fw-bold">Uniformes</h3>
+                        <p class="card-text">
+                        Productos de alta calidad para la higiene bucal.
+                        </p>
+                        <div class="text-center">
+                            <button class="btn btn-color fw-bold">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ends categories -->
+
+    <!-- Address -->
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center py-5">
+            <div class="col-6 text-center">
+                <div class="subtitle-container">
+                    <h2 class="my-0 fw-bold">¿Dónde nos encuentras?</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row pb-5">
+            <div class="col-6">
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.321370775378!2d-99.61408818405212!3d19.18116085364066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8c49e0651a11%3A0x526d75b5e1da56ae!2sLife%20Style%20Villas%20Del%20Campo!5e0!3m2!1sen!2smx!4v1615105379594!5m2!1sen!2smx"
+                loading="lazy"
+                class="w-100"
+                height="200"
+                ></iframe>
+            </div>
+            <div class="col-6 d-flex flex-column justify-content-center">
+                <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <p class="text-muted">Teléfono</p>
+                <p class="text-muted">Correo</p>
+            </div>
+        </div>
+    </div>
+    <!-- End Address -->
+
+</main>
+
+{% endblock content %}
