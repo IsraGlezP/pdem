@@ -1,5 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 
-class Home(TemplateView):
+from applications.category.models import Category
+
+class Home(ListView):
+    model = Category
     template_name = 'home/home.html'
+    # paginate_by = 3

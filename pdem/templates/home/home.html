@@ -1,4 +1,5 @@
-{% extends  'base.html'%}
+{% extends 'base.html'%}
+{% load static %}
 
 {% block title %}
 
@@ -6,60 +7,41 @@
 
 {% endblock title %}
 
+{% block extrastyle %}
+<!-- Slick CSS -->
+<!-- <link rel="stylesheet" href="{% static 'slick/slick.css' %}" type="text/css"> -->
+<!-- <link href="http://kenwheeler.github.io/slick/slick/slick.css" rel="stylesheet"/> -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- <link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}" type="text/css"> -->
+<!-- <link href="http://kenwheeler.github.io/slick/slick/slick-theme.css" rel="stylesheet"/> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" /> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+{% endblock extrastyle %}
+
 {% block content %}
 
 <main>    
     <!-- Business info -->
-    <div
-        class="container-fluid business-info-card business-info d-flex justify-content-center"
-    >
-        <div
-        class="row pt-3 pt-md-0 d-md-flex align-items-md-center"
-        >
-            <div class="col-12 col-md-5 col-lg-6 py-3">
-                <h1 class="fw-bold text-center">
+    <div class="container-fluid business-info-container d-flex justify-content-center">
+        <!-- Title and image -->
+        <div class="row p-3 d-md-flex align-items-md-center">
+            <div class="col-12 col-md-5 col-lg-6">
+                <h1 class="fw-bold text-center text-white">
                     Depósito de Productos Dentales y Equipos Médicos
                 </h1>
-            </div>
-            <div class="col-12 col-md-7 col-lg-6 px-0">
-                <img src="static/img/dark-cover.jpg" class="h-100 w-100" alt="" />
-            </div>
-        </div>
-        <div
-        class="row info-search-card w-100 d-md-flex justify-content-md-center"
-        >
-            <div class="col-12 col-md-10 col-lg-8 col-xxl-5">
-                <div class="card card-background">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-3 d-flex align-items-center">
-                                <img
-                                src="static/img/tooth-color.svg"
-                                class="w-100"
-                                alt=""
-                                />
-                            </div>
-                            <div class="col-9 text-white">
-                                <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Deserunt non illo odio excepturi id nobis architecto
-                                nihil, a ipsam eligendi!
-                                </p>
+                <div class="row d-md-flex justify-content-md-center p-3">
+                    <div class="col-12">
+                        <div class="card see-products-card">
+                            <div class="card-body">
                                 <div class="row">
-                                    <div class="col-12 col-lg-9">
-                                        <div class="input-group-lg">
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                placeholder="¿Qué buscas el día de hoy?"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 col-lg-4">
-                                        <button class="btn btn-lg btn-color fw-bold mt-3 w-100">
-                                            Buscar
+                                    <div class="col-12 fw-bold">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            Deserunt non illo odio excepturi id nobis architecto
+                                            nihil, a ipsam eligendi!
+                                        </p>
+                                        <button class="btn btn-lg button see-products-btn fw-bold w-100">
+                                            Cartera de productos
                                         </button>
                                     </div>
                                 </div>
@@ -68,32 +50,29 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12 col-md-7 col-lg-6">
+                <img src="{% static 'img/dark-cover.jpg' %}" class="h-100 w-100" alt="" />
+            </div>
         </div>
+        <!-- Ends title and image -->
     </div>
     <!-- Ends business info -->
-
-    <!-- Carousel -->
-    <div class="container-fluid" style="margin-top: 220px">
-        <div class="row d-flex justify-content-center pt-5">
+    
+    <!-- Products Carousel -->
+    <div class="container-fluid products-container">
+        <div class="row d-flex justify-content-center pt-3">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 text-center">
-                <div class="subtitle-container">
-                <h2 class="my-0 fw-bold">Productos Destacados</h2>
-                </div>
+                <h2 class="fw-bold">Productos Destacados</h2>
             </div>
         </div>
-        <div class="row d-md-flex justify-content-md-center my-3">
-            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
-                <p>Contamos con los productos de la más alta calidad.</p>
-            </div>
-        </div>
-        <div class="row d-md-flex justify-content-md-center">
-            <div class="col-12 col-md-10 col-lg-8 col-xl-7 px-0">
+        <div class="row d-md-flex justify-content-md-center pb-md-3">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-5">
                 <div
                 id="carouselExampleIndicators"
                 class="carousel slide"
                 data-bs-ride="carousel"
                 >
-                    <ol class="carousel-indicators">
+                    <!-- <ol class="carousel-indicators">
                         <li
                         data-target="#carouselExampleIndicators"
                         data-slide-to="0"
@@ -107,7 +86,7 @@
                         data-target="#carouselExampleIndicators"
                         data-slide-to="2"
                         ></li>
-                    </ol>
+                    </ol> -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="overlay-image slide-1"></div>
@@ -117,7 +96,7 @@
                                 Lorem ipsum dolor sit, amet consectetur adipisicing
                                 elit. Fuga, magni!
                                 </p>
-                                <button class="btn btn-color fw-bold">Ver más</button>
+                                <button class="btn btn-color button see-products-btn fw-bold">Ver más</button>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -128,7 +107,7 @@
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                 Ea, dicta.
                                 </p>
-                                <button class="btn btn-color fw-bold">Ver más</button>
+                                <button class="btn button see-products-btn fw-bold">Ver más</button>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -139,7 +118,7 @@
                                 Lorem, ipsum dolor sit amet consectetur adipisicing
                                 elit. Reiciendis, eos.
                                 </p>
-                                <button class="btn btn-color fw-bold">Ver más</button>
+                                <button class="btn btn-color button see-products-btn fw-bold">Ver más</button>
                             </div>
                         </div>
                     </div>
@@ -171,93 +150,56 @@
             </div>
         </div>
     </div>
-    <!-- Ends carousel -->
+    <!-- Ends products carousel -->
 
     <!-- Categories -->
-    <div class="container-fluid categories pb-0 mb-0">
-        <div class="row d-flex justify-content-center py-5">
+    <div class="container-fluid categories-bg categories-container">
+        <div class="row d-flex justify-content-center pt-3">
             <div class="col-6 col-md-10 col-lg-8 col-xl-7 text-center">
-                <h2 class="my-0 fw-bold">Categorías</h2>
+                <h2 class="my-0 fw-bold text-white">Categorías</h2>
             </div>
         </div>
-        <div
-        class="row d-flex justify-content-center categories-container pb-5 px-lg-5"
-        >
-            <div class="col-10 col-sm-8 col-md-6 col-lg-4">
-                <div class="card category-card">
-                    <div class="card-img-container">
-                        <img
-                        src="static/img/medical-equipment-04.jpg"
-                        class="card-img-top h-100"
-                        alt="cubrebocas"
-                        />
+     
+        <!-- Cards -->
+        <div class="row py-3 px-lg-5 slider">
+            {% if object_list %}
+                {% for i in object_list %}
+                <div class="card-category p-5 mx-1">
+                    <img src="{{ i.photo_main.url }}"/>
+                    <div class="info">
+                        <h3 class="fw-bold">{{ i.category }}</h3>
+                        <p>{{ i.description }}</p>
+                        <button class="button see-products-btn">Ver más</button>
                     </div>
-                    <div class="card-body">
-                        <h3 class="fw-bold">Higiene Bucal</h3>
-                        <p class="card-text">
-                        Productos de alta calidad para la higiene bucal.
-                        </p>
-                        <div class="text-center">
-                            <button class="btn btn-color fw-bold">Ver más</button>
-                        </div>
-                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+            <div class="row">
+                <div class="col-12">
+                    <h1>No hay nada que mostrar por el momento, vuelva más tarde...</h1>
                 </div>
             </div>
-            <div class="col-10 col-sm-8 col-md-6 col-lg-4 mt-3 m-md-0">
-                <div class="card category-card">
-                    <div class="card-img-container">
-                        <img
-                        src="static/img/medical-utensils.jpg"
-                        class="card-img-top h-100"
-                        alt="cubrebocas"
-                        />
-                    </div>
-                    <div class="card-body">
-                        <h3 class="fw-bold">Instrumental</h3>
-                        <p class="card-text">
-                        Productos de alta calidad para la higiene bucal.
-                        </p>
-                        <div class="text-center">
-                            <button class="btn btn-color fw-bold">Ver más</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-10 col-sm-8 col-md-6 col-lg-4 mt-3 mt-lg-0">
-                <div class="card category-card">
-                    <div class="card-img-container">
-                        <img
-                        src="static/img/medical-uniform.jpg"
-                        class="card-img-top h-100"
-                        alt="cubrebocas"
-                        />
-                    </div>
-                    <div class="card-body">
-                        <h3 class="fw-bold">Uniformes</h3>
-                        <p class="card-text">
-                        Productos de alta calidad para la higiene bucal.
-                        </p>
-                        <div class="text-center">
-                            <button class="btn btn-color fw-bold">Ver más</button>
-                        </div>
-                    </div>
-                </div>
+            {% endif %}
+        </div>
+        <!-- Ends cards -->
+
+        <div class="row">
+            <div class="col-12 nav-arrows d-flex justify-content-between">
             </div>
         </div>
+
     </div>
     <!-- Ends categories -->
 
     <!-- Address -->
-    <div class="container-fluid">
-        <div class="row d-flex justify-content-center py-5">
+    <div class="container-fluid products-container">
+        <div class="row d-flex justify-content-center pt-3">
             <div class="col-6 text-center">
-                <div class="subtitle-container">
-                    <h2 class="my-0 fw-bold">¿Dónde nos encuentras?</h2>
-                </div>
+                <h2 class="my-0 fw-bold">¿Dónde nos encuentras?</h2>
             </div>
         </div>
-        <div class="row pb-5">
-            <div class="col-6">
+        <div class="row py-3 d-lg-flex justify-content-lg-center">
+            <div class="col-6 col-lg-4 px-md-5">
                 <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.321370775378!2d-99.61408818405212!3d19.18116085364066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8c49e0651a11%3A0x526d75b5e1da56ae!2sLife%20Style%20Villas%20Del%20Campo!5e0!3m2!1sen!2smx!4v1615105379594!5m2!1sen!2smx"
                 loading="lazy"
@@ -265,7 +207,7 @@
                 height="200"
                 ></iframe>
             </div>
-            <div class="col-6 d-flex flex-column justify-content-center">
+            <div class="col-6 col-lg-4 d-flex flex-column justify-content-center px-md-5">
                 <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                 <p class="text-muted">Teléfono</p>
                 <p class="text-muted">Correo</p>
@@ -277,3 +219,14 @@
 </main>
 
 {% endblock content %}
+
+{% block extrajs %}
+<!-- Slick JS -->
+<!-- <script src="{% static 'slick/slick.min.js' %}"></script> -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script> -->
+
+
+<!-- Custom JS -->
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock extrajs %}
