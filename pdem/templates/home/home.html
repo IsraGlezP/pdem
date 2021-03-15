@@ -24,7 +24,7 @@
     <!-- Business info -->
     <div class="container-fluid business-info-container d-flex justify-content-center">
         <!-- Title and image -->
-        <div class="row p-3 d-md-flex align-items-md-center">
+        <div class="row p-5 d-md-flex align-items-md-center">
             <div class="col-12 col-md-5 col-lg-6">
                 <h1 class="fw-bold text-center text-white">
                     Depósito de Productos Dentales y Equipos Médicos
@@ -60,33 +60,29 @@
     
     <!-- Products Carousel -->
     <div class="container-fluid products-container">
-        <div class="row d-flex justify-content-center pt-3">
+        <div class="row d-flex justify-content-center pt-5 px-5">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 text-center">
                 <h2 class="fw-bold">Productos Destacados</h2>
             </div>
         </div>
-        <div class="row d-md-flex justify-content-md-center pb-md-3">
+        <div class="row d-md-flex justify-content-md-center pt-3 pb-5">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-5">
-                <div
-                id="carouselExampleIndicators"
-                class="carousel slide"
-                data-bs-ride="carousel"
-                >
-                    <!-- <ol class="carousel-indicators">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <ol class="carousel-indicators">
                         <li
-                        data-target="#carouselExampleIndicators"
-                        data-slide-to="0"
-                        class="active"
+                            data-target="#carouselExampleIndicators"
+                            data-slide-to="0"
+                            class="active"
                         ></li>
                         <li
-                        data-target="#carouselExampleIndicators"
-                        data-slide-to="1"
+                            data-target="#carouselExampleIndicators"
+                            data-slide-to="1"
                         ></li>
                         <li
-                        data-target="#carouselExampleIndicators"
-                        data-slide-to="2"
+                            data-target="#carouselExampleIndicators"
+                            data-slide-to="2"
                         ></li>
-                    </ol> -->
+                    </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="overlay-image slide-1"></div>
@@ -154,7 +150,7 @@
 
     <!-- Categories -->
     <div class="container-fluid categories-bg categories-container">
-        <div class="row d-flex justify-content-center pt-3">
+        <div class="row d-flex justify-content-center pt-5 px-5">
             <div class="col-6 col-md-10 col-lg-8 col-xl-7 text-center">
                 <h2 class="my-0 fw-bold text-white">Categorías</h2>
             </div>
@@ -164,10 +160,10 @@
         <div class="row py-3 px-lg-5 slider">
             {% if object_list %}
                 {% for i in object_list %}
-                <div class="card-category p-5 mx-1">
+                <div class="card-category px-3 pt-5 mx-1">
                     <img src="{{ i.photo_main.url }}"/>
                     <div class="info">
-                        <h3 class="fw-bold">{{ i.category }}</h3>
+                        <h3 class="fw-bold text-wrap">{{ i.category }}</h3>
                         <p>{{ i.description }}</p>
                         <button class="button see-products-btn">Ver más</button>
                     </div>
@@ -193,12 +189,12 @@
 
     <!-- Address -->
     <div class="container-fluid products-container">
-        <div class="row d-flex justify-content-center pt-3">
+        <div class="row d-flex justify-content-center p-5">
             <div class="col-6 text-center">
                 <h2 class="my-0 fw-bold">¿Dónde nos encuentras?</h2>
             </div>
         </div>
-        <div class="row py-3 d-lg-flex justify-content-lg-center">
+        <div class="row pb-5 d-lg-flex justify-content-lg-center">
             <div class="col-6 col-lg-4 px-md-5">
                 <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.321370775378!2d-99.61408818405212!3d19.18116085364066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8c49e0651a11%3A0x526d75b5e1da56ae!2sLife%20Style%20Villas%20Del%20Campo!5e0!3m2!1sen!2smx!4v1615105379594!5m2!1sen!2smx"

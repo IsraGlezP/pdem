@@ -2,6 +2,10 @@
   --clr-primary: #012a4a;
 } */
 
+.navbar-container {
+  background: #e3f2fd;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
@@ -23,11 +27,6 @@ h1 {
   background: linear-gradient(90deg, #012a4a 0%, #013a63 45%, #013a63 100%);
 }
 
-.see-products-card{
-  /* position: relative; */
-  /* background: linear-gradient(90deg, #012a4a 0%, #013a63 45%, #013a63 100%); */
-}
-
 .button {
   position: relative;
   z-index: 1;
@@ -47,7 +46,7 @@ h1 {
 
 .see-products-btn,
 .see-categories-btn {
-  background-color: #a9d6e5;
+  background-color: #90e0ef;
 }
 
 .see-products-btn::after,

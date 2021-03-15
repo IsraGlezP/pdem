@@ -5,32 +5,25 @@ $(document).ready(function(){
         arrows: true,
         infinite: false,
         speed: 300,
-        slidesToShow: 3,
+        slidesToShow: 6,
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 3200,
-                settings: {
-                    slidesToShow: 6,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 1600,
+                breakpoint: 1400,
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 1
                 }
             },
             {
-                breakpoint: 1024,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1

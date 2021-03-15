@@ -8,5 +8,6 @@ class CategoryAdmin(admin.ModelAdmin):
     list_filter = ('category',)
     list_editable = ('is_published',)
     search_fields = ('category',)
+    list_per_page = 25
 
 admin.site.register(Category, CategoryAdmin)
