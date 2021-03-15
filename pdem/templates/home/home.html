@@ -69,54 +69,55 @@
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-5">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li
-                            data-target="#carouselExampleIndicators"
-                            data-slide-to="0"
-                            class="active"
-                        ></li>
-                        <li
-                            data-target="#carouselExampleIndicators"
-                            data-slide-to="1"
-                        ></li>
-                        <li
-                            data-target="#carouselExampleIndicators"
-                            data-slide-to="2"
-                        ></li>
+                        {% for product in product_list %}
+                            {% if forloop.counter0 == 0 %}
+                            <li
+                                data-target="#carouselExampleIndicators"
+                                data-slide-to="{{ forloop.counter0 }}"
+                                class="active"
+                            ></li>
+                            {% else %}
+                            <li
+                                data-target="#carouselExampleIndicators"
+                                data-slide-to="{{ forloop.counter0 }}"
+                            ></li>
+                            {% endif %}
+                        {% endfor %}
                     </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="overlay-image slide-1"></div>
-                            <div class="carousel-caption d-block">
-                                <h3 class="text-dark fw-bold">Equipo Médico 01</h3>
-                                <p class="text-dark">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing
-                                elit. Fuga, magni!
-                                </p>
-                                <button class="btn btn-color button see-products-btn fw-bold">Ver más</button>
+                        {% for product in product_list %}
+                            {% if forloop.counter0 == 0 %}
+                            <div class="carousel-item active">
+                                <div 
+                                    style="background-image: url('{{ product.photo_main.url }}')"
+                                    class="overlay-image"
+                                >
+                                </div>
+                                <div class="carousel-caption d-block">
+                                    <h2 class="fw-bold text-dark">{{ product.name }}</h2>
+                                    <p class="fw-bold fs-4 text-dark">
+                                    {{ product.description }}
+                                    </p>
+                                    <button class="btn btn-color button see-products-btn fw-bold">Ver más</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="overlay-image slide-2"></div>
-                            <div class="carousel-caption d-block">
-                                <h3 class="text-dark fw-bold">Equipo Médico 02</h3>
-                                <p class="text-dark">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Ea, dicta.
-                                </p>
-                                <button class="btn button see-products-btn fw-bold">Ver más</button>
+                            {% else %}
+                            <div class="carousel-item">
+                                <div 
+                                    style="background-image: url('{{ product.photo_main.url }}')"
+                                    class="overlay-image"
+                                >
+                                </div>
+                                <div class="carousel-caption d-block">
+                                    <h2 class="fw-bold text-dark">{{ product.name }}</h2>
+                                    <p class="fw-bold fs-4 text-dark">
+                                    {{ product.description }}
+                                    </p>
+                                    <button class="btn btn-color button see-products-btn fw-bold">Ver más</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="overlay-image slide-3"></div>
-                            <div class="carousel-caption d-block">
-                                <h3 class="text-dark fw-bold">Equipo Médico 03</h3>
-                                <p class="text-dark">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit. Reiciendis, eos.
-                                </p>
-                                <button class="btn btn-color button see-products-btn fw-bold">Ver más</button>
-                            </div>
-                        </div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <a
                         href="#carouselExampleIndicators"
@@ -159,12 +160,12 @@
         <!-- Cards -->
         <div class="row py-3 px-lg-5 slider">
             {% if object_list %}
-                {% for i in object_list %}
+                {% for category in category_list %}
                 <div class="card-category px-3 pt-5 mx-1">
-                    <img src="{{ i.photo_main.url }}"/>
+                    <img src="{{ category.photo_main.url }}"/>
                     <div class="info">
-                        <h3 class="fw-bold text-wrap">{{ i.category }}</h3>
-                        <p>{{ i.description }}</p>
+                        <h3 class="fw-bold text-wrap">{{ category.name }}</h3>
+                        <p>{{ category.description }}</p>
                         <button class="button see-products-btn">Ver más</button>
                     </div>
                 </div>
