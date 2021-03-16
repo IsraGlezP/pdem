@@ -22,19 +22,20 @@
 
 <main>    
     <!-- Business info -->
-    <div class="container-fluid business-info-container d-flex justify-content-center">
+    <div class="container-fluid business-info-container d-flex flex-column justify-content-center">
         <!-- Title and image -->
-        <div class="row p-5 d-md-flex align-items-md-center">
+        <div class="row pt-5 px-5 d-flex justify-content-center align-items-center">
             <div class="col-12 col-md-5 col-lg-6">
+            <!-- <div class="col-12"> -->
                 <h1 class="fw-bold text-center text-white">
                     Depósito de Productos Dentales y Equipos Médicos
                 </h1>
-                <div class="row d-md-flex justify-content-md-center p-3">
+                <div class="row pt-3 px-3 pb-3">
                     <div class="col-12">
                         <div class="card see-products-card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-12 fw-bold">
+                                    <div class="col-12 fw-bold p-3">
                                         <p>
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                             Deserunt non illo odio excepturi id nobis architecto
@@ -50,8 +51,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-7 col-lg-6">
-                <img src="{% static 'img/dark-cover.jpg' %}" class="h-100 w-100" alt="" />
+            <div class="col-12 col-md-7 col-lg-6 pb-5">
+                <img src="{% static 'img/dark-cover.jpg' %}" class="w-100" alt="imagen de la empresa" />
             </div>
         </div>
         <!-- Ends title and image -->
@@ -59,15 +60,20 @@
     <!-- Ends business info -->
     
     <!-- Products Carousel -->
-    <div class="container-fluid products-container">
+    <div class="container-fluid products-container m-0 p-0">
+        <div class="row blue-line-container">
+            <div class="col-12 blue-line-thin"></div>
+            <div class="col-12 blue-line-thick"></div>
+            <div class="col-12 blue-line-thin"></div>
+        </div>
         <div class="row d-flex justify-content-center pt-5 px-5">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 text-center">
-                <h2 class="fw-bold">Productos Destacados</h2>
+                <h2 class="fw-bold" data-delay="0s">Productos Destacados</h2>
             </div>
         </div>
         <div class="row d-md-flex justify-content-md-center pt-3 pb-5">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-5">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide anim" data-bs-ride="carousel" data-delay="0.5s">
                     <ol class="carousel-indicators">
                         {% for product in product_list %}
                             {% if forloop.counter0 == 0 %}
@@ -151,9 +157,9 @@
 
     <!-- Categories -->
     <div class="container-fluid categories-bg categories-container">
-        <div class="row d-flex justify-content-center pt-5 px-5">
-            <div class="col-6 col-md-10 col-lg-8 col-xl-7 text-center">
-                <h2 class="my-0 fw-bold text-white">Categorías</h2>
+        <div class="row pt-5 px-5">
+            <div class="col-12">
+                <h2 class="my-0 fw-bold text-white text-center" data-delay="0s">Categorías</h2>
             </div>
         </div>
      
@@ -161,12 +167,12 @@
         <div class="row py-3 px-lg-5 slider">
             {% if object_list %}
                 {% for category in category_list %}
-                <div class="card-category px-3 pt-5 mx-1">
+                <div class="card-category px-3 pt-5 mx-1 anim" data-delay="0s">
                     <img src="{{ category.photo_main.url }}"/>
                     <div class="info">
                         <h3 class="fw-bold text-wrap">{{ category.name }}</h3>
                         <p>{{ category.description }}</p>
-                        <button class="button see-products-btn">Ver más</button>
+                        <a class="btn button see-products-btn fw-bold">Ver más</a>
                     </div>
                 </div>
                 {% endfor %}
@@ -181,7 +187,7 @@
         <!-- Ends cards -->
 
         <div class="row">
-            <div class="col-12 nav-arrows d-flex justify-content-between">
+            <div class="col-12 nav-arrows d-flex justify-content-between anim" data-delay="0s">
             </div>
         </div>
 
@@ -190,12 +196,12 @@
 
     <!-- Address -->
     <div class="container-fluid products-container">
-        <div class="row d-flex justify-content-center p-5">
-            <div class="col-6 text-center">
-                <h2 class="my-0 fw-bold">¿Dónde nos encuentras?</h2>
+        <div class="row pt-5 px-5">
+            <div class="col-12">
+                <h2 class="my-0 fw-bold text-center" data-delay="0s">¿Dónde nos encuentras?</h2>
             </div>
         </div>
-        <div class="row pb-5 d-lg-flex justify-content-lg-center">
+        <div class="row pt-3 pb-5 d-lg-flex justify-content-lg-center anim" data-delay="0s">
             <div class="col-6 col-lg-4 px-md-5">
                 <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.321370775378!2d-99.61408818405212!3d19.18116085364066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8c49e0651a11%3A0x526d75b5e1da56ae!2sLife%20Style%20Villas%20Del%20Campo!5e0!3m2!1sen!2smx!4v1615105379594!5m2!1sen!2smx"

@@ -42,3 +42,24 @@ $(document).ready(function(){
         ]
     });       
 });
+
+// Intersection Observer API
+const images = document.querySelectorAll('.anim');
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+        if(entry.intersectionRatio > 0) {
+            entry.target.style.animation = `anim1 0.7s ${entry.target.dataset.delay} forwards ease-out`;
+            observer.unobserve(entry.target);
+        }
+        else {
+            entry.target.style.animation = 'none';
+        }
+    });
+
+});
+
+images.forEach(image => {
+    observer.observe(image)
+});
