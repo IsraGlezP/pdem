@@ -22,14 +22,16 @@
 
 <main>    
     <!-- Business info -->
-    <div class="container-fluid business-info-container d-flex flex-column justify-content-center">
+    <div class="container-fluid business-info-container d-flex flex-column justify-content-start">
         <!-- Title and image -->
         <div class="row pt-5 px-5 d-flex justify-content-center align-items-center">
             <div class="col-12 col-md-5 col-lg-6">
             <!-- <div class="col-12"> -->
-                <h1 class="fw-bold text-center text-white">
-                    Depósito de Productos Dentales y Equipos Médicos
+                <h1 class="text-center text-white">
+                    <span class="fw-bold company-name text-wrap">Curadent</span>
                 </h1>
+                <hr class="text-white fw-bold">
+                <h1 class="text-center text-white">Productos Dentales y Equipos Médicos</h1>
                 <div class="row pt-3 px-3 pb-3">
                     <div class="col-12">
                         <div class="card see-products-card">
@@ -51,8 +53,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-7 col-lg-6 pb-5">
+            <!-- <div class="col-12 col-md-7 col-lg-6 pb-5">
                 <img src="{% static 'img/dark-cover.jpg' %}" class="w-100" alt="imagen de la empresa" />
+            </div> -->
+            <div class="col-12 col-md-7 col-lg-6 pb-5">
+                <img src="{% static 'img/tooth-color.svg' %}" class="w-100" alt="imagen de la empresa" />
             </div>
         </div>
         <!-- Ends title and image -->
@@ -167,10 +172,10 @@
         <div class="row py-3 px-lg-5 slider">
             {% if object_list %}
                 {% for category in category_list %}
-                <div class="card-category px-3 pt-5 mx-1 anim" data-delay="0s">
+                <div class="card-category category-card px-3 pt-5 mx-1 anim" data-delay="0s">
                     <img src="{{ category.photo_main.url }}"/>
                     <div class="info">
-                        <h3 class="fw-bold text-wrap">{{ category.name }}</h3>
+                        <h3 class="fw-bold text-wrap category-title">{{ category.name }}</h3>
                         <p>{{ category.description }}</p>
                         <a class="btn button see-products-btn fw-bold">Ver más</a>
                     </div>
