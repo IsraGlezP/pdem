@@ -13,7 +13,7 @@ main {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
 
 h2 {
@@ -23,21 +23,10 @@ h2 {
 .business-info-container {
   background: linear-gradient(90deg, #0061A6 0%, #0081CA 45%, #45a3ef 100%);
   /* background: linear-gradient(90deg, #012a4a 0%, #013a63 45%, #013a63 100%); */
-  min-height: 90vh;
-  /* background-color: var(--clr-primary); */
-  /* background-image: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url(/static/img/tooth-cover.jpg);
-  background-position: bottom left, bottom center, bottom right; */
-  /* background-repeat: no-repeat; */
 }
 
 .company-name {
-  /* font-family: "Lobster", cursive; */
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
 .button {
@@ -180,7 +169,7 @@ footer {
   background-image: url(/static/img/tooth-color.svg);
   background-size: 15%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom center;
 }
 
 footer li {

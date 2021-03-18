@@ -22,14 +22,12 @@
 
 <main>    
     <!-- Business info -->
-    <div class="container-fluid business-info-container d-flex flex-column justify-content-start">
+    <div class="container-fluid business-info-container">
         <!-- Title and image -->
-        <div class="row pt-5 px-5 d-flex justify-content-center align-items-center">
+        <div class="row p-3 d-flex justify-content-center align-items-center">
             <div class="col-12 col-md-5 col-lg-6">
             <!-- <div class="col-12"> -->
-                <h1 class="text-center text-white">
-                    <span class="fw-bold company-name text-wrap">Curadent</span>
-                </h1>
+                <h1 class="text-white fw-bold company-name text-center">Curadent</h1>
                 <hr class="text-white fw-bold">
                 <h1 class="text-center text-white">Productos Dentales y Equipos Médicos</h1>
                 <div class="row pt-3 px-3 pb-3">
@@ -53,9 +51,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-12 col-md-7 col-lg-6 pb-5">
-                <img src="{% static 'img/dark-cover.jpg' %}" class="w-100" alt="imagen de la empresa" />
-            </div> -->
             <div class="col-12 col-md-7 col-lg-6 pb-5">
                 <img src="{% static 'img/tooth-color.svg' %}" class="w-100" alt="imagen de la empresa" />
             </div>
@@ -66,19 +61,14 @@
     
     <!-- Products Carousel -->
     <div class="container-fluid products-container m-0 p-0">
-        <div class="row blue-line-container">
-            <div class="col-12 blue-line-thin"></div>
-            <div class="col-12 blue-line-thick"></div>
-            <div class="col-12 blue-line-thin"></div>
-        </div>
         <div class="row d-flex justify-content-center pt-5 px-5">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 text-center">
-                <h2 class="fw-bold" data-delay="0s">Productos Destacados</h2>
+                <h2 class="fw-bold">Productos Destacados</h2>
             </div>
         </div>
         <div class="row d-md-flex justify-content-md-center pt-3 pb-5">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-5">
-                <div id="carouselExampleIndicators" class="carousel slide anim" data-bs-ride="carousel" data-delay="0.5s">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <ol class="carousel-indicators">
                         {% for product in product_list %}
                             {% if forloop.counter0 == 0 %}
