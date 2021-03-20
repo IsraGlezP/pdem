@@ -17,3 +17,8 @@ class Home(ListView):
         print("Aqui debe de haber un context")
         print(context)
         return context
+
+class Products(ListView):
+    context_object_name = 'products_list'
+    model = Product
+    template_name = 'home/products.html'

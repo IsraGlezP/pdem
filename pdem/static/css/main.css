@@ -1,0 +1,49 @@
+.brand-img {
+    width: 30px;
+    height: 24px;
+}
+
+ul {
+    list-style: none;
+}
+
+footer {
+    padding: 30px 20px;
+    background-color: #012a4a;
+    background-image: url(/static/img/tooth-color.svg);
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+  }
+  
+footer li {
+margin: 0 6px;
+}
+
+footer img {
+width: 30px;
+}
+
+@media screen and (min-width: 768px) {
+    footer {
+        background-size: 10%;
+    }
+}
+  
+@media screen and (min-width: 992px) {
+    footer {
+        background-size: 8%;
+    }
+}
+  
+@media screen and (min-width: 1200px) {
+    footer {
+        background-size: 6%;
+    }
+}
+  
+@media screen and (min-width: 1400px) {
+    footer {
+        background-size: 6%;
+    }
+}

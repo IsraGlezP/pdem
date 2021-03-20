@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>Cartera Productos</title>
+{% endblock title %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock extrastyle %}
+
+{% block content %}
+<!-- Category header -->
+<div class="container-fluid category-header">
+    <div class="row p-5">
+        <div class="col-12">
+            <h1 class="text-white text-center fw-bold">NOMBRE CATEGORÍA</h1>
+        </div>
+    </div>
+</div>
+<!-- Ends category header -->
+
+<!-- Filter panel -->
+<div class="container-fluid filter-panel">
+    <div class="row p-3">
+        <div class="col-12 mb-3">
+            <label for="" class="text-white fw-bold">Categoría</label>
+            <select name="" id="" class="form-control">
+                <option value="" selected disabled>---</option>
+                <option value="">Higiene Bucal</option>
+                <option value="">Instrumental</option>
+                <option value="">Yeso</option>
+                <option value="">Desechable</option>
+            </select>
+        </div>
+        <div class="col-12 mb-3">
+            <label for="" class="text-white fw-bold">Producto</label>
+            <input type="text" placeholder="Ingrese producto a buscar..." class="form-control">
+        </div>
+    </div>
+</div>
+<!-- Ends filter panel -->
+
+<!-- Products -->
+<div class="container-fluid">
+    <div class="row p-3">
+        <div class="col-12 mb-3">
+            <div class="card">
+                <img src="{% static 'img/toothbrush.jpg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Cepillo de dientes</h5>
+                    <h6 class="text-muted">Cepillos de dientes con cerdas suaves para todo tipo de bocas.</h6>
+                    <ul class="text-center p-0 m-0">
+                        <li>3 piezas</li>
+                        <li>4 piezas</li>
+                        <li>5 piezas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mb-3">
+            <div class="card">
+                <img src="{% static 'img/toothbrush.jpg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Cepillo de dientes</h5>
+                    <h6 class="text-muted">Cepillos de dientes con cerdas suaves para todo tipo de bocas.</h6>
+                    <ul class="text-center p-0 m-0">
+                        <li>3 piezas</li>
+                        <li>4 piezas</li>
+                        <li>5 piezas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mb-3">
+            <div class="card">
+                <img src="{% static 'img/toothbrush.jpg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Cepillo de dientes</h5>
+                    <h6 class="text-muted">Cepillos de dientes con cerdas suaves para todo tipo de bocas.</h6>
+                    <ul class="text-center p-0 m-0">
+                        <li>3 piezas</li>
+                        <li>4 piezas</li>
+                        <li>5 piezas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Ends products -->
+{% endblock content %}

@@ -1,0 +1,12 @@
+:root {
+    --clr-primary: #45a3ef;
+    --clr-secondary: #0081CA;
+}
+
+.category-header {
+    background: linear-gradient(90deg, #0061A6 0%, #0081CA 45%, #45a3ef 100%);
+}
+
+.filter-panel {
+    background: linear-gradient(90deg, #012a4a 0%, #013a63 45%, #013a63 100%);
+}

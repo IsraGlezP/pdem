@@ -128,10 +128,6 @@ h2 {
   border-bottom: 3px solid #00b4d8;
 }
 
-ul {
-  list-style: none;
-}
-
 .tooth-img {
   width: 200%;
   /* border-radius: 50%; */
@@ -161,23 +157,6 @@ ul {
 
 .card-img-container {
   height: 15rem;
-}
-
-footer {
-  padding: 30px 20px;
-  background-color: #012a4a;
-  background-image: url(/static/img/tooth-color.svg);
-  background-size: 15%;
-  background-repeat: no-repeat;
-  background-position: bottom center;
-}
-
-footer li {
-  margin: 0 6px;
-}
-
-footer img {
-  width: 30px;
 }
 
 @media screen and (min-width: 768px) {
