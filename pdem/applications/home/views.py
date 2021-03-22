@@ -14,11 +14,13 @@ class Home(ListView):
         context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the top products
         context['product_list'] = Product.objects.filter(is_top=True)
-        print("Aqui debe de haber un context")
-        print(context)
         return context
 
 class Products(ListView):
     context_object_name = 'products_list'
     model = Product
     template_name = 'home/products.html'
+
+    def get_queryset(self):
+        # context = Product.objects.filter(category_id=1)
+        return []

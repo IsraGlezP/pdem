@@ -21,11 +21,11 @@
     <div class="container-fluid business-info-container">
         <!-- Title and image -->
         <div class="row p-3 d-flex justify-content-center align-items-center">
-            <div class="col-12 col-md-5 col-lg-6">
+            <div class="col-12 col-md-7 col-lg-6">
             <!-- <div class="col-12"> -->
                 <h1 class="text-white fw-bold company-name text-center">Curadent</h1>
                 <hr class="text-white fw-bold">
-                <h1 class="text-center text-white">Productos Dentales y Equipos Médicos</h1>
+                <h2 class="text-center text-white">Productos Dentales y Equipos Médicos</h2>
                 <div class="row pt-3 px-3 pb-3">
                     <div class="col-12">
                         <div class="card see-products-card">
@@ -47,8 +47,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-7 col-lg-6 pb-5">
-                <img src="{% static 'img/tooth-color.svg' %}" class="w-100" alt="imagen de la empresa" />
+            <div class="col-12 col-md-5 col-lg-6 d-flex align-items-center">
+                <img src="{% static 'img/tooth-color.svg' %}" class="w-100 logo-image" alt="imagen de la empresa" />
             </div>
         </div>
         <!-- Ends title and image -->
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="carousel-caption d-block">
                                     <h2 class="fw-bold text-dark">{{ product.name }}</h2>
-                                    <p class="fw-bold fs-5 text-dark">
+                                    <p class="fs-5 text-dark">
                                     {{ product.description }}
                                     </p>
                                     <button class="btn btn-color button see-products-btn fw-bold">Ver más</button>
@@ -107,7 +107,7 @@
                                 </div>
                                 <div class="carousel-caption d-block">
                                     <h2 class="fw-bold text-dark">{{ product.name }}</h2>
-                                    <p class="fw-bold fs-5 text-dark">
+                                    <p class="fs-5 text-dark">
                                     {{ product.description }}
                                     </p>
                                     <button class="btn btn-color button see-products-btn fw-bold">Ver más</button>

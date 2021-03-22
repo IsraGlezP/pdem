@@ -9,7 +9,8 @@ ul {
 
 footer {
     padding: 30px 20px;
-    background-color: #012a4a;
+    background: #0061A6;
+    /* background: linear-gradient(90deg, #0061A6 0%, #0081CA 45%, #45a3ef 100%); */
     background-image: url(/static/img/tooth-color.svg);
     background-size: 15%;
     background-repeat: no-repeat;
