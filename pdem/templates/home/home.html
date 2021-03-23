@@ -37,9 +37,9 @@
                                             Deserunt non illo odio excepturi id nobis architecto
                                             nihil, a ipsam eligendi!
                                         </p>
-                                        <button class="btn btn-lg button see-products-btn fw-bold w-100">
+                                        <a class="btn btn-lg button see-products-btn fw-bold w-100" href="{% url 'products' %}">
                                             Cartera de productos
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -90,13 +90,14 @@
                                     class="overlay-image"
                                 >
                                 </div>
-                                <div class="carousel-caption d-block">
+                                <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
                                     <h2 class="fw-bold text-dark">{{ product.name }}</h2>
                                     <p class="fs-5 text-dark">
                                     {{ product.description }}
                                     </p>
-                                    <button class="btn btn-color button see-products-btn fw-bold">Ver más</button>
-                                </div>
+                                    <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
+                                    <button class="btn btn-color button see-products-btn fw-bold" type="submit">Ver más</button>
+                                </form>
                             </div>
                             {% else %}
                             <div class="carousel-item">
@@ -105,13 +106,14 @@
                                     class="overlay-image"
                                 >
                                 </div>
-                                <div class="carousel-caption d-block">
+                                <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
                                     <h2 class="fw-bold text-dark">{{ product.name }}</h2>
                                     <p class="fs-5 text-dark">
                                     {{ product.description }}
                                     </p>
-                                    <button class="btn btn-color button see-products-btn fw-bold">Ver más</button>
-                                </div>
+                                    <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
+                                    <button class="btn btn-color button see-products-btn fw-bold" type="submit">Ver más</button>
+                                </form>
                             </div>
                             {% endif %}
                         {% endfor %}

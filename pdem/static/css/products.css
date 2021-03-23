@@ -10,3 +10,11 @@
 .filter-panel {
     background: linear-gradient(90deg, #012a4a 0%, #013a63 45%, #013a63 100%);
 }
+
+.img-container {
+    height: 18rem;
+}
+
+.bg-products {
+    background-color: #eee;
+}

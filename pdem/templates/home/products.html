@@ -15,16 +15,27 @@
 <div class="container-fluid category-header">
     <div class="row p-5">
         <div class="col-12">
-            <h1 class="text-white text-center fw-bold">NOMBRE CATEGORÍA</h1>
+            <h1 class="text-white text-center fw-bold">PRODUCTOS</h1>
         </div>
     </div>
 </div>
 <!-- Ends category header -->
 
+<!-- Breadcrumb -->
+<div class="container-fluid">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb px-3 pt-3">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Productos</li>
+        </ol>
+    </nav>
+</div>
+<!-- Ends breadcrumb -->
+
 <!-- Filter panel -->
-<div class="container-fluid filter-panel">
-    <div class="row p-3 p-lg-5 d-flex justify-content-center">
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3 mb-lg-0">
+<div class="container-fluid">
+    <form class="row px-3 pb-3 d-flex justify-content-center justify-content-md-start" method="GET">
+        <!-- <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3 mb-lg-0">
             <label for="" class="text-white fw-bold mb-2">Categoría</label>
             <select name="" id="" class="form-control">
                 <option value="" selected disabled>---</option>
@@ -33,65 +44,97 @@
                 <option value="">Yeso</option>
                 <option value="">Desechable</option>
             </select>
+        </div> -->
+        <div class="col-9 col-md-8 col-lg-4 col-xl-3">
+            <input type="text" placeholder="Ingrese producto a buscar..." class="form-control" id="kword" name="kword">
         </div>
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3 mb-lg-0">
-            <label for="" class="text-white fw-bold mb-2">Producto</label>
-            <input type="text" placeholder="Ingrese producto a buscar..." class="form-control">
+        <div class="col-3 col-md-4 col-lg-4 col-xl-3 p-0">
+            <button class="btn btn-primary" type="submit">Buscar</button>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3 mb-lg-0">
-            <label for="" class="text-white fw-bold mb-2">Buscar</label>
-            <button class="btn btn-primary w-100">Buscar</button>
-        </div>
-    </div>
+    </form>
 </div>
 <!-- Ends filter panel -->
 
 <!-- Products -->
-<div class="container-fluid">
+<div class="container-fluid bg-products">
     <div class="row p-3 d-flex justify-content-center">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+        {% for product in products_list %}
+        <div class="col-12 col-lg-6 mb-3">
             <div class="card">
-                <img src="{% static 'img/toothbrush.jpg' %}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Cepillo de dientes</h5>
-                    <h6 class="text-muted">Cepillos de dientes con cerdas suaves para todo tipo de bocas.</h6>
-                    <ul class="text-center p-0 m-0">
-                        <li>3 piezas</li>
-                        <li>4 piezas</li>
-                        <li>5 piezas</li>
-                    </ul>
+                <div class="row g-0">
+                    <div class="col-12 col-sm-5 col-md-4 col-lg-5">
+                        <img src="{{ product.photo_main.url }}" class="img-fluid w-100" style="height: 20rem;">
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-8 col-lg-7">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <hr>
+                            <h6 class="text-muted mb-md-5">{{ product.description }}</h6>
+                            <p class="fw-bold p-0 m-0">Variantes</p>
+                            <ul class="p-0 m-0">
+                                {% for variant in variants_list %}
+                                    {% if variant.product.id == product.id %}
+                                    <li>{{ variant.value }} {{ variant.unit_measurement }}</li>
+                                    {% endif%}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-            <div class="card">
-                <img src="{% static 'img/toothbrush.jpg' %}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Cepillo de dientes</h5>
-                    <h6 class="text-muted">Cepillos de dientes con cerdas suaves para todo tipo de bocas.</h6>
-                    <ul class="text-center p-0 m-0">
-                        <li>3 piezas</li>
-                        <li>4 piezas</li>
-                        <li>5 piezas</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-            <div class="card">
-                <img src="{% static 'img/toothbrush.jpg' %}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Cepillo de dientes</h5>
-                    <h6 class="text-muted">Cepillos de dientes con cerdas suaves para todo tipo de bocas.</h6>
-                    <ul class="text-center p-0 m-0">
-                        <li>3 piezas</li>
-                        <li>4 piezas</li>
-                        <li>5 piezas</li>
-                    </ul>
-                </div>
-            </div>
+        {% endfor %}
+    </div>
+    <!-- Pagination -->
+    {% if is_paginated %}
+    <div class="row pb-3 px-3">
+        <div class="col-12 d-flex justify-content-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% for page in paginator.page_range %}
+
+                    {% ifequal page page_obj.number %}
+                    <li class="page-item active"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                    {% else %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                    {% endifequal %}
+
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
         </div>
     </div>
+    {% endif %}
+    <!-- Ends pagination -->
 </div>
 <!-- Ends products -->
+
 {% endblock content %}
