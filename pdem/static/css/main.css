@@ -7,6 +7,16 @@ ul {
     list-style: none;
 }
 
+.btn-outline-primary {
+    color: #faa307!important;
+    border-color: #faa307!important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #faa307!important;
+    color: #000!important;
+}
+
 footer {
     padding: 30px 20px;
     background: #0061A6;
