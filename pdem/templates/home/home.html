@@ -18,15 +18,15 @@
 
 <main>    
     <!-- Business info -->
-    <div class="container-fluid business-info-container">
+    <div class="container business-info-container">
         <!-- Title and image -->
-        <div class="row p-3 d-flex justify-content-center align-items-center">
-            <div class="col-12 col-md-7 col-lg-6">
+        <div class="row p-3">
+            <div class="col-12 col-md-7 col-lg-6 mt-5">
             <!-- <div class="col-12"> -->
                 <h1 class="text-white fw-bold company-name text-center">Curadent</h1>
                 <hr class="text-white fw-bold">
                 <h2 class="text-center text-white">Productos Dentales y Equipos Médicos</h2>
-                <div class="row pt-3 px-3 pb-3">
+                <div class="row my-5">
                     <div class="col-12">
                         <div class="card see-products-card">
                             <div class="card-body">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-5 col-lg-6 d-flex align-items-center">
+            <div class="col-12 col-md-5 col-lg-6 d-flex align-items-center mb-5">
                 <img src="{% static 'img/tooth-color.svg' %}" class="w-100 logo-image" alt="imagen de la empresa" />
             </div>
         </div>
@@ -58,92 +58,98 @@
     <!-- Ends business info -->
     
     <!-- Products Carousel -->
-    <div class="container-fluid products-container m-0 p-0">
-        <div class="row d-flex justify-content-center pt-5 px-5">
-            <div class="col-12 col-md-10 col-lg-8 col-xl-7 text-center">
-                <h2 class="fw-bold">Productos Destacados</h2>
-            </div>
-        </div>
-        <div class="row d-md-flex justify-content-md-center pt-3 pb-5">
-            <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-5">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                    <ol class="carousel-indicators">
-                        {% for product in product_list %}
-                            {% if forloop.counter0 == 0 %}
-                            <li
-                                data-target="#carouselExampleIndicators"
-                                data-slide-to="{{ forloop.counter0 }}"
-                                class="active"
-                            ></li>
-                            {% else %}
-                            <li
-                                data-target="#carouselExampleIndicators"
-                                data-slide-to="{{ forloop.counter0 }}"
-                            ></li>
-                            {% endif %}
-                        {% endfor %}
-                    </ol>
-                    <div class="carousel-inner">
-                        {% for product in product_list %}
-                            {% if forloop.counter0 == 0 %}
-                            <div class="carousel-item active">
-                                <div 
-                                    style="background-image: url('{{ product.photo_main.url }}')"
-                                    class="overlay-image"
-                                >
-                                </div>
-                                <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
-                                    <h2 class="fw-bold text-dark">{{ product.name }}</h2>
-                                    <p class="fs-5 text-dark">
-                                    {{ product.description }}
-                                    </p>
-                                    <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
-                                    <button class="btn btn-color button see-products-btn fw-bold" type="submit">Ver más</button>
-                                </form>
-                            </div>
-                            {% else %}
-                            <div class="carousel-item">
-                                <div 
-                                    style="background-image: url('{{ product.photo_main.url }}')"
-                                    class="overlay-image"
-                                >
-                                </div>
-                                <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
-                                    <h2 class="fw-bold text-dark">{{ product.name }}</h2>
-                                    <p class="fs-5 text-dark">
-                                    {{ product.description }}
-                                    </p>
-                                    <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
-                                    <button class="btn btn-color button see-products-btn fw-bold" type="submit">Ver más</button>
-                                </form>
-                            </div>
-                            {% endif %}
-                        {% endfor %}
+    <div class="container-fluid products-container">
+        <div class="row p-0 m-0">
+            <div class="col p-0 m-0">
+                <div class="container">
+                    <div class="row d-flex justify-content-center p-3">
+                        <div class="col-12 col-md-10 col-lg-8 col-xl-7 text-center mt-5">
+                            <h2 class="fw-bold">Productos Destacados</h2>
+                        </div>
                     </div>
-                    <a
-                        href="#carouselExampleIndicators"
-                        class="carousel-control-prev"
-                        role="button"
-                        data-bs-slide="prev"
-                    >
-                        <span
-                        class="carousel-control-prev-icon"
-                        aria-hidden="true"
-                        ></span>
-                        <span class="visually-hidden">Previous</span>
-                    </a>
-                    <a
-                        href="#carouselExampleIndicators"
-                        class="carousel-control-next"
-                        role="button"
-                        data-bs-slide="next"
-                    >
-                        <span
-                        class="carousel-control-next-icon"
-                        aria-hidden="true"
-                        ></span>
-                        <span class="visually-hidden">Next</span>
-                    </a>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8 my-5">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    {% for product in product_list %}
+                                        {% if forloop.counter0 == 0 %}
+                                        <li
+                                            data-target="#carouselExampleIndicators"
+                                            data-slide-to="{{ forloop.counter0 }}"
+                                            class="active"
+                                        ></li>
+                                        {% else %}
+                                        <li
+                                            data-target="#carouselExampleIndicators"
+                                            data-slide-to="{{ forloop.counter0 }}"
+                                        ></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ol>
+                                <div class="carousel-inner">
+                                    {% for product in product_list %}
+                                        {% if forloop.counter0 == 0 %}
+                                        <div class="carousel-item active">
+                                            <div 
+                                                style="background-image: url('{{ product.photo_main.url }}')"
+                                                class="overlay-image"
+                                            >
+                                            </div>
+                                            <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
+                                                <h2 class="fw-bold text-dark">{{ product.name }}</h2>
+                                                <p class="fs-5 text-dark">
+                                                {{ product.description }}
+                                                </p>
+                                                <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
+                                                <button class="btn btn-color button see-products-btn fw-bold" type="submit">Ver más</button>
+                                            </form>
+                                        </div>
+                                        {% else %}
+                                        <div class="carousel-item">
+                                            <div 
+                                                style="background-image: url('{{ product.photo_main.url }}')"
+                                                class="overlay-image"
+                                            >
+                                            </div>
+                                            <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
+                                                <h2 class="fw-bold text-dark">{{ product.name }}</h2>
+                                                <p class="fs-5 text-dark">
+                                                {{ product.description }}
+                                                </p>
+                                                <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
+                                                <button class="btn btn-color button see-products-btn fw-bold" type="submit">Ver más</button>
+                                            </form>
+                                        </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <a
+                                    href="#carouselExampleIndicators"
+                                    class="carousel-control-prev"
+                                    role="button"
+                                    data-bs-slide="prev"
+                                >
+                                    <span
+                                    class="carousel-control-prev-icon"
+                                    aria-hidden="true"
+                                    ></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </a>
+                                <a
+                                    href="#carouselExampleIndicators"
+                                    class="carousel-control-next"
+                                    role="button"
+                                    data-bs-slide="next"
+                                >
+                                    <span
+                                    class="carousel-control-next-icon"
+                                    aria-hidden="true"
+                                    ></span>
+                                    <span class="visually-hidden">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -151,64 +157,76 @@
     <!-- Ends products carousel -->
 
     <!-- Categories -->
-    <div class="container-fluid categories-bg categories-container">
-        <div class="row pt-5 px-5">
-            <div class="col-12">
-                <h2 class="my-0 fw-bold text-white text-center" data-delay="0s">Categorías</h2>
-            </div>
-        </div>
-     
-        <!-- Cards -->
-        <div class="row py-3 px-lg-5 slider">
-            {% if object_list %}
-                {% for category in category_list %}
-                <div class="card-category category-card px-3 pt-5 mx-1 anim" data-delay="0s">
-                    <img src="{{ category.photo_main.url }}"/>
-                    <div class="info">
-                        <h3 class="fw-bold text-wrap category-title">{{ category.name }}</h3>
-                        <p>{{ category.description }}</p>
-                        <a class="btn button see-products-btn fw-bold">Ver más</a>
+    <div class="container-fluid">
+        <div class="row p-0 m-0">
+            <div class="col p-0 m-0">
+                <div class="container categories-container">
+                    <div class="row p-3">
+                        <div class="col-12 mt-5">
+                            <h2 class="my-0 fw-bold text-white text-center" data-delay="0s">Categorías</h2>
+                        </div>
                     </div>
-                </div>
-                {% endfor %}
-            {% else %}
-            <div class="row">
-                <div class="col-12">
-                    <h1>No hay nada que mostrar por el momento, vuelva más tarde...</h1>
+                 
+                    <!-- Cards -->
+                    <div class="row py-3 px-lg-5 slider">
+                        {% if object_list %}
+                            {% for category in category_list %}
+                            <div class="card-category category-card px-3 pt-5 mx-3 anim" data-delay="0s">
+                                <img src="{{ category.photo_main.url }}"/>
+                                <div class="info">
+                                    <h3 class="fw-bold text-wrap category-title">{{ category.name }}</h3>
+                                    <p>{{ category.description }}</p>
+                                    <a class="btn button see-products-btn fw-bold">Ver más</a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>No hay nada que mostrar por el momento, vuelva más tarde...</h1>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <!-- Ends cards -->
+            
+                    <div class="row my-4">
+                        <div class="col-12 nav-arrows d-flex justify-content-between anim" data-delay="0s">
+                        </div>
+                    </div>
+            
                 </div>
             </div>
-            {% endif %}
         </div>
-        <!-- Ends cards -->
-
-        <div class="row">
-            <div class="col-12 nav-arrows d-flex justify-content-between anim" data-delay="0s">
-            </div>
-        </div>
-
     </div>
     <!-- Ends categories -->
 
     <!-- Address -->
     <div class="container-fluid products-container">
-        <div class="row pt-5 px-5">
-            <div class="col-12">
-                <h2 class="my-0 fw-bold text-center" data-delay="0s">¿Dónde nos encuentras?</h2>
-            </div>
-        </div>
-        <div class="row pt-3 pb-5 d-lg-flex justify-content-lg-center anim" data-delay="0s">
-            <div class="col-6 col-lg-4 px-md-5">
-                <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.321370775378!2d-99.61408818405212!3d19.18116085364066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8c49e0651a11%3A0x526d75b5e1da56ae!2sLife%20Style%20Villas%20Del%20Campo!5e0!3m2!1sen!2smx!4v1615105379594!5m2!1sen!2smx"
-                loading="lazy"
-                class="w-100"
-                height="200"
-                ></iframe>
-            </div>
-            <div class="col-6 col-lg-4 d-flex flex-column justify-content-center px-md-5">
-                <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <p class="text-muted">Teléfono</p>
-                <p class="text-muted">Correo</p>
+        <div class="row p-0 m-0">
+            <div class="col p-0 m-0">
+                <div class="container">
+                    <div class="row p-3">
+                        <div class="col-12 mt-5">
+                            <h2 class="my-0 fw-bold text-center" data-delay="0s">¿Dónde nos encuentras?</h2>
+                        </div>
+                    </div>
+                    <div class="row p-3 d-lg-flex justify-content-lg-center anim my-4" data-delay="0s">
+                        <div class="col-6 col-lg-4 px-md-5">
+                            <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.321370775378!2d-99.61408818405212!3d19.18116085364066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8c49e0651a11%3A0x526d75b5e1da56ae!2sLife%20Style%20Villas%20Del%20Campo!5e0!3m2!1sen!2smx!4v1615105379594!5m2!1sen!2smx"
+                            loading="lazy"
+                            class="w-100"
+                            height="200"
+                            ></iframe>
+                        </div>
+                        <div class="col-6 col-lg-4 d-flex flex-column justify-content-center px-md-5">
+                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <p class="text-muted">Teléfono</p>
+                            <p class="text-muted">Correo</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

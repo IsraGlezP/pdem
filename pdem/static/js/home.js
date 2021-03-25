@@ -5,16 +5,16 @@ $(document).ready(function(){
         arrows: true,
         infinite: false,
         speed: 300,
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 1,
         responsive: [
-            {
-                breakpoint: 1400,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1
-                }
-            },
+            // {
+            //     breakpoint: 1400,
+            //     settings: {
+            //         slidesToShow: 4,
+            //         slidesToScroll: 1
+            //     }
+            // },
             {
                 breakpoint: 1200,
                 settings: {

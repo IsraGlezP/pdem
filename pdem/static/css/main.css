@@ -1,6 +1,118 @@
+
+:root {
+    /* Colors */
+    --clr-light-01: #0096c7;
+    --clr-light-02: #45a3ef;
+    --clr-light-03: #90e0ef;
+
+    --clr-dark-01: #03045e;
+    --clr-dark-02: #023e8a;
+    --clr-dark-03: #0077b6;
+
+    --clr-secondary: #ffba08;
+    --clr-accent: #d00000;
+
+    /* Background colors */
+    --bck-primary: #caf0f8;
+    --bck-secondary: #ade8f4;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    line-height: 20px;
+    background: linear-gradient(90deg, #0061A6 0%, #0081CA 45%, #45a3ef 100%);
+}
+
+a {
+    color: #fff;
+    font-weight: 700;
+}
+
+a:hover {
+    color: var(--clr-secondary);
+}
+
+.sticky-nav {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    padding: 20px;
+    z-index: 1;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    -ms-grid-row-align: auto;
+    align-self: auto;
+    -webkit-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    background-color: var(--clr-dark-02);
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 10px 6px;
+    outline: none;
+}
+
+.navbar-toggler span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border: 1px;
+    background: #fff;
+}
+
+.navbar-toggler span + span {
+    margin-top: 4px;
+    width: 22px;
+}
+
+.navbar-toggler span + span + span {
+    width: 22px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 1.4rem 1rem;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link.active {
+    color: var(--clr-accent);
+}
+
+.btn-search {
+    background-color: var(--clr-secondary);
+    color: #000;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+}
+
+.btn-search:hover {
+    background-color: var(--clr-accent);
+    color: #fff;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.44rem;
+}
+
 .brand-img {
-    width: 30px;
-    height: 24px;
+    width: 50px;
+    height: 50px;
 }
 
 ul {
@@ -19,8 +131,7 @@ ul {
 
 footer {
     padding: 30px 20px;
-    background: #0061A6;
-    /* background: linear-gradient(90deg, #0061A6 0%, #0081CA 45%, #45a3ef 100%); */
+    background: var(--clr-dark-02);
     background-image: url(/static/img/tooth-color.svg);
     background-size: 15%;
     background-repeat: no-repeat;

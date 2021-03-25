@@ -1,28 +1,6 @@
-:root {
-  --clr-primary: #45a3ef;
-  --clr-secondary: #faa307;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.5;
-}
-
-main {
-  overflow-x: hidden;
-}
-
-h1 {
-  font-size: 3em;
-}
-
-.business-info-container {
-  background: linear-gradient(90deg, #0061A6 0%, #0081CA 45%, #45a3ef 100%);
-  /* background: linear-gradient(90deg, #012a4a 0%, #013a63 45%, #013a63 100%); */
-}
 
 .logo-image {
-  height: 15rem;
+  height: 250px;
 }
 
 .button {
@@ -61,6 +39,7 @@ h1 {
 
 .products-container {
   background-color: #eee;
+  /* background-color: #ade8f4; */
   background-size: cover;
   position: relative;
   z-index: 1;
