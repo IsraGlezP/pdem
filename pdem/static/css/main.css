@@ -18,32 +18,51 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    font-size: 62.5%;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-size: 18px;
+    font-size: 1.6rem;
     font-family: "Montserrat", sans-serif;
-    line-height: 20px;
+    line-height: 1.5;
     background: linear-gradient(90deg, #0061A6 0%, #0081CA 45%, #45a3ef 100%);
 }
 
-a {
-    color: #fff;
-    font-weight: 700;
+h1 {
+    font-size: 5rem;
 }
 
-a:hover {
-    color: var(--clr-secondary);
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+input.form-control {
+    font-size: 1.6rem;
+}
+
+.btn {
+    font-size: 1.6rem;
+    padding: 0.7em;
+}
+
+/* Navbar */
+
+.brand-img {
+    width: 5rem;
+    height: 5rem;
 }
 
 .sticky-nav {
     position: sticky;
     position: -webkit-sticky;
     top: 0px;
-    padding: 20px;
+    padding: 2rem;
     z-index: 1;
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
@@ -58,15 +77,15 @@ a:hover {
 
 .navbar-toggler {
     border: none;
-    padding: 10px 6px;
+    padding: 1rem 0.6rem;
     outline: none;
 }
 
 .navbar-toggler span {
     display: block;
-    width: 22px;
-    height: 2px;
-    border: 1px;
+    width: 2.2rem;
+    height: 0.2rem;
+    border: 0.1rem;
     background: #fff;
 }
 
@@ -80,9 +99,14 @@ a:hover {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
+    color: #fff;
+    font-weight: 700;
     padding: 1.4rem 1rem;
-    font-size: 1.2rem;
     position: relative;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+    color: var(--clr-secondary);
 }
 
 .navbar-expand-lg .navbar-nav .nav-link.active {
@@ -92,9 +116,9 @@ a:hover {
 .btn-search {
     background-color: var(--clr-secondary);
     color: #000;
-    border-radius: 10px;
-    padding: 1rem 1.5rem;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    padding: 1em 1.5em;
 }
 
 .btn-search:hover {
@@ -102,49 +126,34 @@ a:hover {
     color: #fff;
 }
 
-h1 {
-    font-size: 3rem;
-}
-
-h2 {
-    font-size: 2.44rem;
-}
-
-.brand-img {
-    width: 50px;
-    height: 50px;
-}
-
 ul {
     list-style: none;
 }
 
-.btn-outline-primary {
-    color: #faa307!important;
-    border-color: #faa307!important;
+ul.dropdown-menu {
+    font-size: 1.6rem;
 }
 
-.btn-outline-primary:hover {
-    background-color: #faa307!important;
-    color: #000!important;
-}
+/* Footer */
 
 footer {
-    padding: 30px 20px;
+    padding: 3rem 2rem;
     background: var(--clr-dark-02);
     background-image: url(/static/img/tooth-color.svg);
-    background-size: 15%;
+    background-size: 10%;
     background-repeat: no-repeat;
-    background-position: bottom center;
+    background-position: center center;
   }
   
 footer li {
-margin: 0 6px;
+margin: 0 0.6rem;
 }
 
 footer img {
-width: 30px;
+width: 3rem;
 }
+
+/* Media queries */
 
 @media screen and (min-width: 768px) {
     footer {

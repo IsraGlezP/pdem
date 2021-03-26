@@ -18,7 +18,7 @@
 
 <main>    
     <!-- Business info -->
-    <div class="container business-info-container">
+    <div class="container">
         <!-- Title and image -->
         <div class="row p-3">
             <div class="col-12 col-md-7 col-lg-6 mt-5">
@@ -37,11 +37,9 @@
                                             Deserunt non illo odio excepturi id nobis architecto
                                             nihil, a ipsam eligendi!
                                         </p>
-                                        <!-- <a class="btn btn-lg button see-products-btn fw-bold w-100" href="{% url 'products' %}">
-                                            Cartera de productos
-                                        </a> -->
-                                        <a class="btn hover-button type1" href="{% url 'products' %}"><h3 class="fw-bold">Productos</h3></a>
-                                        <!-- <a class="hover-button"><span>Productos</span><em></em></a> -->
+                                        <a class="btn hover-button type1" href="{% url 'products' %}">
+                                            <h2 class="fw-bold">Productos</h2>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +65,7 @@
                             <h2 class="fw-bold">Productos Destacados</h2>
                         </div>
                     </div>
-                    <div class="row d-flex justify-content-center">
+                    <div class="row d-flex justify-content-center pb-3 px-3">
                         <div class="col-12 col-md-10 col-lg-8 my-5">
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                 <ol class="carousel-indicators">
@@ -97,11 +95,11 @@
                                             </div>
                                             <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
                                                 <h2 class="fw-bold text-dark">{{ product.name }}</h2>
-                                                <p class="fs-5 text-dark">
+                                                <p class="text-dark">
                                                 {{ product.description }}
                                                 </p>
                                                 <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
-                                                <button class="btn btn-color button see-products-btn fw-bold" type="submit">Ver más</button>
+                                                <button class="btn btn-color button see-products-btn fw-bold mb-3" type="submit">Ver más</button>
                                             </form>
                                         </div>
                                         {% else %}
@@ -113,11 +111,11 @@
                                             </div>
                                             <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
                                                 <h2 class="fw-bold text-dark">{{ product.name }}</h2>
-                                                <p class="fs-5 text-dark">
+                                                <p class="text-dark">
                                                 {{ product.description }}
                                                 </p>
                                                 <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
-                                                <button class="btn btn-color button see-products-btn fw-bold" type="submit">Ver más</button>
+                                                <button class="btn btn-color button see-products-btn fw-bold mb-3" type="submit">Ver más</button>
                                             </form>
                                         </div>
                                         {% endif %}
@@ -168,10 +166,10 @@
                     </div>
                  
                     <!-- Cards -->
-                    <div class="row py-3 px-lg-5 slider">
+                    <div class="row pb-3 px-3 px-lg-5 slider">
                         {% if object_list %}
                             {% for category in category_list %}
-                            <div class="card-category category-card px-3 pt-5 mx-3 anim" data-delay="0s">
+                            <div class="card-category category-card px-3 pt-5 mx-3 my-5 anim" data-delay="0s">
                                 <img src="{{ category.photo_main.url }}"/>
                                 <div class="info">
                                     <h3 class="fw-bold text-wrap category-title">{{ category.name }}</h3>
@@ -190,7 +188,7 @@
                     </div>
                     <!-- Ends cards -->
             
-                    <div class="row my-4">
+                    <div class="row pb-3 px-3">
                         <div class="col-12 nav-arrows d-flex justify-content-between anim" data-delay="0s">
                         </div>
                     </div>
@@ -211,8 +209,8 @@
                             <h2 class="my-0 fw-bold text-center" data-delay="0s">¿Dónde nos encuentras?</h2>
                         </div>
                     </div>
-                    <div class="row p-3 d-lg-flex justify-content-lg-center anim my-4" data-delay="0s">
-                        <div class="col-6 col-lg-4 px-md-5">
+                    <div class="row pb-3 p-3 d-lg-flex justify-content-lg-center anim" data-delay="0s">
+                        <div class="col-12 col-lg-4 my-5">
                             <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.321370775378!2d-99.61408818405212!3d19.18116085364066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8c49e0651a11%3A0x526d75b5e1da56ae!2sLife%20Style%20Villas%20Del%20Campo!5e0!3m2!1sen!2smx!4v1615105379594!5m2!1sen!2smx"
                             loading="lazy"
@@ -220,7 +218,7 @@
                             height="200"
                             ></iframe>
                         </div>
-                        <div class="col-6 col-lg-4 d-flex flex-column justify-content-center px-md-5">
+                        <div class="col-12 col-lg-4 d-flex flex-column justify-content-center mb-5">
                             <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                             <p class="text-muted">Teléfono</p>
                             <p class="text-muted">Correo</p>
