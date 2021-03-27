@@ -3,18 +3,6 @@
   height: 75%;
 }
 
-.main-title {
-  color: var(--clr-secondary);
-}
-
-.primary-background {
-  background: linear-gradient(90deg, #0061A6 0%, #0081CA 45%, #45A3EF 100%);
-}
-
-.secondary-background {
-  background-color: rgb(233, 233, 233);
-}
-
 /* Primary button */
 .primary-button {
   position: relative;
@@ -215,7 +203,7 @@
   outline: none;
   border: none;
   border-radius: 3px;
-  background: white;
+  /* background: white; */
   color: black;
   font-weight: bold;
   cursor: pointer;

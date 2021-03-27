@@ -66,10 +66,10 @@
                 </div>
             </div>
             <div class="row justify-content-center px-3 pb-5 mt-5">
-                <div class="col-12 col-xxl-10">
+                <div class="col-12 col-xxl-8">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                         <ol class="carousel-indicators">
-                            {% for product in product_list %}
+                            {% for product in products_list %}
                                 {% if forloop.counter0 == 0 %}
                                 <li
                                     data-target="#carouselExampleIndicators"
@@ -85,7 +85,7 @@
                             {% endfor %}
                         </ol>
                         <div class="carousel-inner">
-                            {% for product in product_list %}
+                            {% for product in products_list %}
                                 {% if forloop.counter0 == 0 %}
                                 <div class="carousel-item active">
                                     <div 
@@ -109,14 +109,13 @@
                                         class="overlay-image"
                                     >
                                     </div>
-                                    <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
+                                    <div class="carousel-caption d-block">
                                         <h2 class="fw-bold text-dark">{{ product.name }}</h2>
                                         <p class="text-dark">
                                         {{ product.description }}
                                         </p>
-                                        <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
-                                        <button class="btn button details-button fw-bold mb-3 text-white" type="submit">Ver más</button>
-                                    </form>
+                                        <a class="btn button details-button fw-bold mb-3 text-white" href="products?kword={{ product.name }}">Ver más</a>
+                                    </div>
                                 </div>
                                 {% endif %}
                             {% endfor %}
@@ -170,20 +169,20 @@
                 </div>
                 <div class="col-12 slider">
                     {% if object_list %}
-                        {% for category in category_list %}
+                        {% for category in categories_list %}
                         <div class="card-category p-3 pt-4 mx-3">
                             <img src="{{ category.photo_main.url }}"/>
                             <div class="info">
                                 <h2 class="fw-bold text-wrap category-title">{{ category.name }}</h2>
                                 <p>{{ category.description }}</p>
-                                <a class="btn btn-lg button details-button fw-bold text-white">Ver más</a>
+                                <a class="btn btn-lg button details-button fw-bold text-white" href="products?category={{ category.id }}">Ver más</a>
                             </div>
                         </div>
                         {% endfor %}
                     {% else %}
                     <div class="row">
                         <div class="col">
-                            <h1>No hay nada que mostrar por el momento, vuelva más tarde...</h1>
+                            <h2>No hay nada que mostrar por el momento, vuelva más tarde...</h2>
                         </div>
                     </div>
                     {% endif %}

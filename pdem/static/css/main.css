@@ -25,6 +25,22 @@ h3 {
     font-size: .6rem;
 }
 
+a {
+    text-decoration: none;
+}
+
+.main-title {
+    color: var(--clr-secondary);
+}
+  
+.primary-background {
+    background: linear-gradient(90deg, #0061A6 0%, #0081CA 45%, #45A3EF 100%);
+}
+  
+.secondary-background {
+    background-color: rgb(233, 233, 233);
+}
+
 /* Navbar */
 .brand-img {
     width: 3.125rem;
@@ -121,20 +137,19 @@ footer img {
 }
 
 /* Media queries */
-
 @media screen and (min-width: 768px) {
-    html {
+    /* html {
         font-size: 18px;
-    }
+    } */
     footer {
         background-size: 10%;
     }
 }
   
 @media screen and (min-width: 992px) {
-    html {
-        font-size: 20px;
-    }
+    /* html {
+        font-size: 16px;
+    } */
     footer {
         background-size: 8%;
     }
@@ -148,7 +163,7 @@ footer img {
 
 @media screen and (min-width: 1400px) {
     html {
-        font-size: 22px;
+        font-size: 18px;
     }
     footer {
         background-size: 5%;

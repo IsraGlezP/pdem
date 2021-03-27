@@ -1,20 +1,37 @@
-:root {
-    --clr-primary: #45a3ef;
-    --clr-secondary: #0081CA;
+.breadcrumb-item a {
+    color: #6c757d;
 }
 
-.category-header {
-    background: linear-gradient(90deg, #0061A6 0%, #0081CA 45%, #45a3ef 100%);
+.breadcrumb-item.active {
+    color: var(--clr-secondary);
 }
 
-.filter-panel {
-    background: linear-gradient(90deg, #012a4a 0%, #013a63 45%, #013a63 100%);
+.fa-bars {
+    color: #fff;
 }
 
 .img-container {
     height: 18rem;
 }
 
-.bg-products {
-    background-color: #eee;
+/* Filter navbar */
+.filter-navbar {
+    background: var(--clr-accent);
+    border-radius: 0.25rem;
 }
+
+.filter-navbar .navbar-nav .nav-link {
+    color: #fff;
+    font-weight: 700;
+    padding: 1rem 1.5rem;
+    position: relative;
+}
+
+.filter-navbar .navbar-nav .nav-link:hover {
+    color: var(--clr-primary);
+}
+
+.filter-navbar .navbar-nav .nav-link.active {
+    color: var(--clr-primary);
+}
+

@@ -11,130 +11,145 @@
 {% endblock extrastyle %}
 
 {% block content %}
-<!-- Category header -->
-<div class="container-fluid category-header">
-    <div class="row p-5">
-        <div class="col-12">
-            <h1 class="text-white text-center fw-bold">PRODUCTOS</h1>
-        </div>
-    </div>
-</div>
-<!-- Ends category header -->
-
-<!-- Breadcrumb -->
-<div class="container-fluid">
-    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-        <ol class="breadcrumb px-3 pt-3">
-            <li class="breadcrumb-item"><a href="{% url 'home' %}">Inicio</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Productos</li>
-        </ol>
-    </nav>
-</div>
-<!-- Ends breadcrumb -->
-
-<!-- Filter panel -->
-<div class="container-fluid">
-    <form class="row px-3 pb-3 d-flex justify-content-center justify-content-md-start" method="GET">
-        <!-- <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3 mb-lg-0">
-            <label for="" class="text-white fw-bold mb-2">Categoría</label>
-            <select name="" id="" class="form-control">
-                <option value="" selected disabled>---</option>
-                <option value="">Higiene Bucal</option>
-                <option value="">Instrumental</option>
-                <option value="">Yeso</option>
-                <option value="">Desechable</option>
-            </select>
-        </div> -->
-        <div class="col-9 col-md-8 col-lg-4 col-xl-3">
-            <input type="text" placeholder="Ingrese producto a buscar..." class="form-control" id="kword" name="kword">
-        </div>
-        <div class="col-3 col-md-4 col-lg-4 col-xl-3 p-0">
-            <button class="btn btn-outline-primary" type="submit">Buscar</button>
-        </div>
-    </form>
-</div>
-<!-- Ends filter panel -->
-
-<!-- Products -->
-<div class="container-fluid bg-products">
-    <div class="row p-3 d-flex justify-content-center">
-        {% for product in products_list %}
-        <div class="col-12 col-lg-6 mb-3">
-            <div class="card">
-                <div class="row g-0">
-                    <div class="col-12 col-sm-5 col-md-4 col-lg-5">
-                        <img src="{{ product.photo_main.url }}" class="img-fluid w-100" style="height: 20rem;">
-                    </div>
-                    <div class="col-12 col-sm-7 col-md-8 col-lg-7">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ product.name }}</h5>
-                            <hr>
-                            <h6 class="text-muted mb-md-5">{{ product.description }}</h6>
-                            <p class="fw-bold p-0 m-0">Variantes</p>
-                            <ul class="p-0 m-0">
-                                {% for variant in variants_list %}
-                                    {% if variant.product.id == product.id %}
-                                    <li>{{ variant.value }} {{ variant.unit_measurement }}</li>
-                                    {% endif%}
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
+<main class="secondary-background">
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="row p-3">
+            <div class="col">
+                <div class="card">
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb px-3 pt-3">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Inicio</a></li>
+                            {% if category_filter %}
+                            <li class="breadcrumb-item" aria-current="page"><a href="{% url 'products' %}">Productos</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ category_filter|first }}</li>
+                            {% else %}
+                            <li class="breadcrumb-item active" aria-current="page">Productos</li>
+                            {% endif %}
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
-    <!-- Pagination -->
-    {% if is_paginated %}
-    <div class="row pb-3 px-3">
-        <div class="col-12 d-flex justify-content-center">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    {% if page_obj.has_previous %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
+    <!-- Ends breadcrumb -->
+
+    <!-- Filter panel and products -->
+    <div class="container py-3">
+        <div class="row p-3 align-items-center">
+            <div class="col-12">
+                <nav class="navbar filter-navbar">
+                    <div class="container-fluid">
+                        <a class="navbar-brand text-white" data-bs-toggle="collapse" href="#categories-content" role="button" aria-expanded="false" aria-controls="categories-content">
+                            Categorías
                         </a>
-                    </li>
-                    {% else %}
-                    <li class="page-item disabled">
-                        <a class="page-link" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#categories-content" aria-controls="categories-content" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="categories-content">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                {% for category in categories_list %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="?category={{ category.id }}">{{ category.name }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                      </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-12 mt-3">
+                <form class="d-flex" method="GET" action="{% url 'products' %}">
+                    <input class="form-control me-2" type="search" placeholder="e.j. cepillo de dientes" aria-label="Search" id="kword" name="kword">
+                    <button class="btn btn-search" type="submit">Buscar</button>
+                </form>
+            </div>
+            <div class="col-12 mt-4">
+                <div class="card products-card">
+                    <div class="row p-3 p-lg-4">
+                        {% for product in products_list %}
+                        <div class="col-12 col-md-6 col-xl-4 mb-5">
+                            <div class="card">
+                                <div class="row g-0">
+                                    <div class="col-12">
+                                        <img src="{{ product.photo_main.url }}" class="img-fluid w-100" style="height: 20rem;">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="card-body">
+                                            <h2 class="card-title fw-bold main-title">{{ product.name }}</h2>
+                                            <!-- <hr> -->
+                                            <h6 class="text-muted mt-3">{{ product.description }}</h6>
+                                            <button class="btn btn-search my-3">Ver detalle</button>
+                                            <!-- <p class="fw-bold p-0 m-0">Variantes</p>
+                                            <ul class="p-0 m-0">
+                                                {% for variant in variants_list %}
+                                                    {% if variant.product.id == product.id %}
+                                                    <li>{{ variant.value }} {{ variant.unit_measurement }}</li>
+                                                    {% endif%}
+                                                {% endfor %}
+                                            </ul> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Pagination -->
+                    {% if is_paginated %}
+                    <div class="row pb-3 px-3">
+                        <div class="col-12 d-flex justify-content-center">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    {% if page_obj.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    {% endif %}
+                
+                                    {% for page in paginator.page_range %}
+                
+                                    {% ifequal page page_obj.number %}
+                                    <li class="page-item active"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                                    {% else %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                                    {% endifequal %}
+                
+                                    {% endfor %}
+                
+                                    {% if page_obj.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                    {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
                     {% endif %}
-
-                    {% for page in paginator.page_range %}
-
-                    {% ifequal page page_obj.number %}
-                    <li class="page-item active"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
-                    {% else %}
-                    <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
-                    {% endifequal %}
-
-                    {% endfor %}
-
-                    {% if page_obj.has_next %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                    {% else %}
-                    <li class="page-item disabled">
-                        <a class="page-link" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </nav>
+                    <!-- Ends pagination -->
+                </div>
+            </div>
         </div>
     </div>
-    {% endif %}
-    <!-- Ends pagination -->
-</div>
-<!-- Ends products -->
+    <!-- Ends filter panel and products -->
+</main>
 
 {% endblock content %}

@@ -4,7 +4,7 @@ $(document).ready(function(){
         appendDots: $(".dots"),
         infinite: true,
         speed: 300,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         nextArrow: $(".next"),
         prevArrow: $(".prev"),

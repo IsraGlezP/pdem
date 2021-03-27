@@ -48,12 +48,15 @@
                                     Categorías
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Higiene Bucal</a></li>
+                                    {% for category in categories_list %}
+                                    <li><a class="dropdown-item" href="/products?category={{ category.id }}">{{ category.name }}</a></li>
+                                    {% endfor %}
+                                    <!-- <li><a class="dropdown-item" href="#">Higiene Bucal</a></li>
                                     <li><a class="dropdown-item" href="#">Instrumental</a></li>
                                     <li><a class="dropdown-item" href="#">Desechable</a></li>
                                     <li><a class="dropdown-item" href="#">Anestesia</a></li>
                                     <li><a class="dropdown-item" href="#">Guantes</a></li>
-                                    <li><a class="dropdown-item" href="#">Uniformes</a></li>
+                                    <li><a class="dropdown-item" href="#">Uniformes</a></li> -->
                                 </ul>
                             </li>
                         </ul>
