@@ -28,7 +28,7 @@
 </head>
 <body>
 
-    <header class="header-background">
+    <header>
         <div class="sticky-nav">
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
@@ -58,7 +58,7 @@
                             </li>
                         </ul>
                         <form class="d-flex" method="GET" action="{% url 'products' %}">
-                            <input class="form-control me-2" type="search" placeholder="¿Qué producto buscas?" aria-label="Search" id="kword" name="kword">
+                            <input class="form-control me-2" type="search" placeholder="e.j. cepillo de dientes" aria-label="Search" id="kword" name="kword">
                             <button class="btn btn-search" type="submit">Buscar</button>
                         </form>
                     </div>
@@ -70,9 +70,9 @@
     {% block content %} {% endblock content %}
 
     <!-- Footer -->
-    <footer class="mt-auto">
+    <footer>
         <div class="container">
-            <div class="row d-flex align-items-center text-white justify-content-around">
+            <div class="row p-3 d-flex align-items-center text-white justify-content-around">
                 <div class="col-6">Copyright&#169; 2021</div>
                 <div class="col-6">
                     <ul class="d-flex align-items-center m-0 justify-content-end">

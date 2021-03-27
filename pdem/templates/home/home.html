@@ -18,135 +18,133 @@
 
 <main>    
     <!-- Business info -->
-    <div class="container">
-        <!-- Title and image -->
-        <div class="row p-3">
-            <div class="col-12 col-md-7 col-lg-6 mt-5">
-            <!-- <div class="col-12"> -->
-                <h1 class="text-white fw-bold company-name text-center">Curadent</h1>
-                <hr class="text-white fw-bold">
-                <h2 class="text-center text-white">Productos Dentales y Equipos Médicos</h2>
-                <div class="row my-5">
-                    <div class="col-12">
-                        <div class="card see-products-card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12 p-3 d-flex flex-column justify-content-center align-items-center">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Deserunt non illo odio excepturi id nobis architecto
-                                            nihil, a ipsam eligendi!
-                                        </p>
-                                        <a class="btn hover-button type1" href="{% url 'products' %}">
-                                            <h2 class="fw-bold">Productos</h2>
-                                        </a>
+    <div class="primary-background">
+        <div class="container">
+            <!-- Title and image -->
+            <div class="row p-3">
+                <div class="col-12 col-md-7 col-lg-6 mt-5">
+                <!-- <div class="col-12"> -->
+                    <h1 class="fw-bold text-center text-white m-0">Curadent</h1>
+                    <hr class="fw-bold">
+                    <h2 class="text-center text-white m-0">Productos Dentales y Equipos Médicos</h2>
+                    <div class="row my-5">
+                        <div class="col-12">
+                            <div class="card see-products-card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 p-5 d-flex flex-column justify-content-center align-items-center">
+                                            <p>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                Deserunt non illo odio excepturi id nobis architecto
+                                                nihil, a ipsam eligendi!
+                                            </p>
+                                            <a class="btn primary-button" href="{% url 'products' %}">
+                                                <h2 class="fw-bold">Productos</h2>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-12 col-md-5 col-lg-6 mb-5 mb-md-0 mt-md-5">
+                    <img src="{% static 'img/tooth-color.svg' %}" class="w-100 logo-image" alt="logo de la empresa" />
+                </div>
             </div>
-            <div class="col-12 col-md-5 col-lg-6 d-flex align-items-center mb-5">
-                <img src="{% static 'img/tooth-color.svg' %}" class="w-100 logo-image" alt="imagen de la empresa" />
-            </div>
+            <!-- Ends title and image -->
         </div>
-        <!-- Ends title and image -->
     </div>
     <!-- Ends business info -->
     
     <!-- Products Carousel -->
-    <div class="container-fluid products-container">
-        <div class="row p-0 m-0">
-            <div class="col p-0 m-0">
-                <div class="container">
-                    <div class="row d-flex justify-content-center p-3">
-                        <div class="col-12 col-md-10 col-lg-8 col-xl-7 text-center mt-5">
-                            <h2 class="fw-bold">Productos Destacados</h2>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center pb-3 px-3">
-                        <div class="col-12 col-md-10 col-lg-8 my-5">
-                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                                <ol class="carousel-indicators">
-                                    {% for product in product_list %}
-                                        {% if forloop.counter0 == 0 %}
-                                        <li
-                                            data-target="#carouselExampleIndicators"
-                                            data-slide-to="{{ forloop.counter0 }}"
-                                            class="active"
-                                        ></li>
-                                        {% else %}
-                                        <li
-                                            data-target="#carouselExampleIndicators"
-                                            data-slide-to="{{ forloop.counter0 }}"
-                                        ></li>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ol>
-                                <div class="carousel-inner">
-                                    {% for product in product_list %}
-                                        {% if forloop.counter0 == 0 %}
-                                        <div class="carousel-item active">
-                                            <div 
-                                                style="background-image: url('{{ product.photo_main.url }}')"
-                                                class="overlay-image"
-                                            >
-                                            </div>
-                                            <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
-                                                <h2 class="fw-bold text-dark">{{ product.name }}</h2>
-                                                <p class="text-dark">
-                                                {{ product.description }}
-                                                </p>
-                                                <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
-                                                <button class="btn btn-color button see-products-btn fw-bold mb-3" type="submit">Ver más</button>
-                                            </form>
-                                        </div>
-                                        {% else %}
-                                        <div class="carousel-item">
-                                            <div 
-                                                style="background-image: url('{{ product.photo_main.url }}')"
-                                                class="overlay-image"
-                                            >
-                                            </div>
-                                            <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
-                                                <h2 class="fw-bold text-dark">{{ product.name }}</h2>
-                                                <p class="text-dark">
-                                                {{ product.description }}
-                                                </p>
-                                                <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
-                                                <button class="btn btn-color button see-products-btn fw-bold mb-3" type="submit">Ver más</button>
-                                            </form>
-                                        </div>
-                                        {% endif %}
-                                    {% endfor %}
+    <div class="secondary-background">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col text-center mt-5">
+                    <h2 class="fw-bold main-title m-0">Productos Destacados</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center px-3 pb-5 mt-5">
+                <div class="col-12 col-xxl-10">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <ol class="carousel-indicators">
+                            {% for product in product_list %}
+                                {% if forloop.counter0 == 0 %}
+                                <li
+                                    data-target="#carouselExampleIndicators"
+                                    data-slide-to="{{ forloop.counter0 }}"
+                                    class="active"
+                                ></li>
+                                {% else %}
+                                <li
+                                    data-target="#carouselExampleIndicators"
+                                    data-slide-to="{{ forloop.counter0 }}"
+                                ></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ol>
+                        <div class="carousel-inner">
+                            {% for product in product_list %}
+                                {% if forloop.counter0 == 0 %}
+                                <div class="carousel-item active">
+                                    <div 
+                                        style="background-image: url('{{ product.photo_main.url }}')"
+                                        class="overlay-image"
+                                    >
+                                    </div>
+                                    <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
+                                        <h2 class="fw-bold text-dark">{{ product.name }}</h2>
+                                        <p class="text-dark">
+                                        {{ product.description }}
+                                        </p>
+                                        <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
+                                        <button class="btn button details-button fw-bold mb-3 text-white" type="submit">Ver más</button>
+                                    </form>
                                 </div>
-                                <a
-                                    href="#carouselExampleIndicators"
-                                    class="carousel-control-prev"
-                                    role="button"
-                                    data-bs-slide="prev"
-                                >
-                                    <span
-                                    class="carousel-control-prev-icon"
-                                    aria-hidden="true"
-                                    ></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </a>
-                                <a
-                                    href="#carouselExampleIndicators"
-                                    class="carousel-control-next"
-                                    role="button"
-                                    data-bs-slide="next"
-                                >
-                                    <span
-                                    class="carousel-control-next-icon"
-                                    aria-hidden="true"
-                                    ></span>
-                                    <span class="visually-hidden">Next</span>
-                                </a>
-                            </div>
+                                {% else %}
+                                <div class="carousel-item">
+                                    <div 
+                                        style="background-image: url('{{ product.photo_main.url }}')"
+                                        class="overlay-image"
+                                    >
+                                    </div>
+                                    <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
+                                        <h2 class="fw-bold text-dark">{{ product.name }}</h2>
+                                        <p class="text-dark">
+                                        {{ product.description }}
+                                        </p>
+                                        <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
+                                        <button class="btn button details-button fw-bold mb-3 text-white" type="submit">Ver más</button>
+                                    </form>
+                                </div>
+                                {% endif %}
+                            {% endfor %}
                         </div>
+                        <a
+                            href="#carouselExampleIndicators"
+                            class="carousel-control-prev"
+                            role="button"
+                            data-bs-slide="prev"
+                        >
+                            <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                            ></span>
+                            <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a
+                            href="#carouselExampleIndicators"
+                            class="carousel-control-next"
+                            role="button"
+                            data-bs-slide="next"
+                        >
+                            <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                            ></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -155,75 +153,68 @@
     <!-- Ends products carousel -->
 
     <!-- Categories -->
-    <div class="container-fluid">
-        <div class="row p-0 m-0">
-            <div class="col p-0 m-0">
-                <div class="container categories-container">
-                    <div class="row p-3">
-                        <div class="col-12 mt-5">
-                            <h2 class="my-0 fw-bold text-white text-center" data-delay="0s">Categorías</h2>
-                        </div>
-                    </div>
-                 
-                    <!-- Cards -->
-                    <div class="row pb-3 px-3 px-lg-5 slider">
-                        {% if object_list %}
-                            {% for category in category_list %}
-                            <div class="card-category category-card px-3 pt-5 mx-3 my-5 anim" data-delay="0s">
-                                <img src="{{ category.photo_main.url }}"/>
-                                <div class="info">
-                                    <h3 class="fw-bold text-wrap category-title">{{ category.name }}</h3>
-                                    <p>{{ category.description }}</p>
-                                    <a class="btn button see-products-btn fw-bold">Ver más</a>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        {% else %}
-                        <div class="row">
-                            <div class="col-12">
-                                <h1>No hay nada que mostrar por el momento, vuelva más tarde...</h1>
-                            </div>
-                        </div>
-                        {% endif %}
-                    </div>
-                    <!-- Ends cards -->
-            
-                    <div class="row pb-3 px-3">
-                        <div class="col-12 nav-arrows d-flex justify-content-between anim" data-delay="0s">
-                        </div>
-                    </div>
-            
+    <div class="primary-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mt-5 text-center">
+                    <h2 class="fw-bold text-white m-0">Categorías</h2>
                 </div>
             </div>
+            
+            <!-- Cards -->
+            <div class="row mt-5 slick-container">
+                <div class="col">
+                    <i class="fas fa-chevron-left prev"></i>
+                    <div class="dots"></div>
+                    <i class="fas fa-chevron-right next"></i>
+                </div>
+                <div class="col-12 slider">
+                    {% if object_list %}
+                        {% for category in category_list %}
+                        <div class="card-category p-3 pt-4 mx-3">
+                            <img src="{{ category.photo_main.url }}"/>
+                            <div class="info">
+                                <h2 class="fw-bold text-wrap category-title">{{ category.name }}</h2>
+                                <p>{{ category.description }}</p>
+                                <a class="btn btn-lg button details-button fw-bold text-white">Ver más</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                    <div class="row">
+                        <div class="col">
+                            <h1>No hay nada que mostrar por el momento, vuelva más tarde...</h1>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <!-- Ends cards -->
         </div>
     </div>
     <!-- Ends categories -->
 
     <!-- Address -->
-    <div class="container-fluid products-container">
-        <div class="row p-0 m-0">
-            <div class="col p-0 m-0">
-                <div class="container">
-                    <div class="row p-3">
-                        <div class="col-12 mt-5">
-                            <h2 class="my-0 fw-bold text-center" data-delay="0s">¿Dónde nos encuentras?</h2>
-                        </div>
-                    </div>
-                    <div class="row pb-3 p-3 d-lg-flex justify-content-lg-center anim" data-delay="0s">
-                        <div class="col-12 col-lg-4 my-5">
-                            <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.321370775378!2d-99.61408818405212!3d19.18116085364066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8c49e0651a11%3A0x526d75b5e1da56ae!2sLife%20Style%20Villas%20Del%20Campo!5e0!3m2!1sen!2smx!4v1615105379594!5m2!1sen!2smx"
-                            loading="lazy"
-                            class="w-100"
-                            height="200"
-                            ></iframe>
-                        </div>
-                        <div class="col-12 col-lg-4 d-flex flex-column justify-content-center mb-5">
-                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <p class="text-muted">Teléfono</p>
-                            <p class="text-muted">Correo</p>
-                        </div>
-                    </div>
+    <div class="secondary-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mt-5 text-center">
+                    <h2 class="fw-bold main-title m-0">¿Dónde nos encuentras?</h2>
+                </div>
+            </div>
+            <div class="row px-3 pb-5 mt-5 justify-content-lg-center">
+                <div class="col-12 col-lg-6 mb-5">
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.321370775378!2d-99.61408818405212!3d19.18116085364066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8c49e0651a11%3A0x526d75b5e1da56ae!2sLife%20Style%20Villas%20Del%20Campo!5e0!3m2!1sen!2smx!4v1615105379594!5m2!1sen!2smx"
+                    loading="lazy"
+                    class="w-100"
+                    height="200"
+                    ></iframe>
+                </div>
+                <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
+                    <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                    <p class="text-muted">Teléfono</p>
+                    <p class="text-muted">Correo</p>
                 </div>
             </div>
         </div>
