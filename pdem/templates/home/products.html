@@ -67,33 +67,50 @@
             <div class="col-12 mt-4">
                 <div class="card products-card">
                     <div class="row p-3 p-lg-4">
-                        {% for product in products_list %}
-                        <div class="col-12 col-md-6 col-xl-4 mb-5">
-                            <div class="card">
-                                <div class="row g-0">
-                                    <div class="col-12">
-                                        <img src="{{ product.photo_main.url }}" class="img-fluid w-100" style="height: 20rem;">
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="card-body">
-                                            <h2 class="card-title fw-bold main-title">{{ product.name }}</h2>
-                                            <!-- <hr> -->
-                                            <h6 class="text-muted mt-3">{{ product.description }}</h6>
-                                            <button class="btn btn-search my-3">Ver detalle</button>
-                                            <!-- <p class="fw-bold p-0 m-0">Variantes</p>
-                                            <ul class="p-0 m-0">
-                                                {% for variant in variants_list %}
-                                                    {% if variant.product.id == product.id %}
-                                                    <li>{{ variant.value }} {{ variant.unit_measurement }}</li>
-                                                    {% endif%}
-                                                {% endfor %}
-                                            </ul> -->
+                        {% if products_list %}
+                            {% for product in products_list %}
+                            <div class="col-12 col-lg-6 mb-5">
+                                <div class="wrapper">
+                                    <div class="flipping-card">
+                                        <input type="checkbox" id="card{{ forloop.counter0 }}" class="more" aria-hidden="true">
+                                        <div class="content">
+                                            <div class="front" style="background-image: url('{{ product.photo_main.url }}')">
+                                                <div class="inner">
+                                                    <h2 class="fw-bold">{{ product.name }}</h2>
+                                                    <label for="card{{ forloop.counter0 }}" class="button-flipping-card" aria-hidden="true">
+                                                        Ver detalle
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="back">
+                                                <div class="inner">
+                                                    <div class="description">
+                                                        <p>{{ product.description }}</p>
+                                                        <ul>
+                                                            {% for variant in variants_list %}
+                                                                {% if variant.product.id == product.id %}
+                                                                <li>{{ variant.value }} {{ variant.unit_measurement }}</li>
+                                                                {% endif%}
+                                                            {% endfor %}
+                                                        </ul>
+                                                    </div>
+                                                    <div class="location fw-bold main-title">{{ product.name }}</div>
+                                                    <label for="card{{ forloop.counter0 }}" class="button-flipping-card return" aria-hidden="true">
+                                                        <i class="fas fa-arrow-left"></i>
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {% endfor %}
+                        {% else %}
+                        <div class="col">
+                            <h2>No se han encontrado resultados.</h2>
+                            <p>Intente con otros parámetros de búsqueda.</p>
                         </div>
-                        {% endfor %}
+                        {% endif %}
                     </div>
 
                     <!-- Pagination -->

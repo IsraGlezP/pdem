@@ -4,6 +4,9 @@
     --clr-primary: #45a3ef;
     --clr-secondary: #005ca1;
     --clr-accent: #00215b;
+
+    /* Time */
+    --time: 0.707s;
 }
 
 body {
@@ -136,6 +139,22 @@ footer img {
     width: 3rem;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--clr-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-secondary);
+}
+
 /* Media queries */
 @media screen and (min-width: 768px) {
     /* html {
@@ -172,7 +191,7 @@ footer img {
 
 @media screen and (min-width: 2600px) {
     html {
-        font-size: 26px;
+        font-size: 22px;
     }
     footer {
         background-size: 3%;
