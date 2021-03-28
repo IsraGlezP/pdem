@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Product, Unit_Measurement, Variant
+from .models import Product, Variant
 
 class VariantInline(admin.TabularInline):
     model = Variant
@@ -21,7 +21,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class VariantAdmin(admin.ModelAdmin):
-    list_display = ('id', 'product', 'value', 'unit_measurement')
+    list_display = ('id', 'product', 'value')
     list_display_links = ('id', 'product')
     list_filter = ('product',)
     search_fields = ('product',)
@@ -29,5 +29,4 @@ class VariantAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Product, ProductAdmin)
-admin.site.register(Unit_Measurement)
 admin.site.register(Variant, VariantAdmin)

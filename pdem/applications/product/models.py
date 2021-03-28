@@ -18,23 +18,9 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-
-class Unit_Measurement(models.Model):
-    name = models.CharField('unidad_medida', max_length=50)
-
-    class Meta:
-        verbose_name = 'Unidad de Medida'
-        verbose_name_plural = 'Unidades de Medida'
-        ordering = ['name']
-
-    def __str__(self):
-        return self.name
-
-
 class Variant(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     value = models.CharField('valor', max_length=50)
-    unit_measurement = models.ForeignKey(Unit_Measurement, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Variante'

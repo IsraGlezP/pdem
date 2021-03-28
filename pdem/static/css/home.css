@@ -73,7 +73,7 @@
 }
 
 /* Buttons effect */
-.button {
+/* .button {
   position: relative;
   z-index: 1;
 }
@@ -102,7 +102,7 @@
 .details-button:hover::after {
   transform: scaleX(1);
   transform-origin: left;
-}
+} */
 
 /* Categories carousel */
 .category-title {

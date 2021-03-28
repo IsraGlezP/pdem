@@ -13,7 +13,7 @@
 {% block content %}
 <main class="secondary-background">
     <!-- Breadcrumb -->
-    <div class="container">
+    <div class="container p-0">
         <div class="row p-3">
             <div class="col">
                 <div class="card">
@@ -35,7 +35,7 @@
     <!-- Ends breadcrumb -->
 
     <!-- Filter panel and products -->
-    <div class="container py-3">
+    <div class="container py-3 px-0">
         <div class="row p-3 align-items-center">
             <div class="col-12">
                 <nav class="navbar filter-navbar">
@@ -66,20 +66,25 @@
             </div>
             <div class="col-12 mt-4">
                 <div class="card products-card">
-                    <div class="row p-3 p-lg-4">
+                    <div class="row">
                         {% if products_list %}
                             {% for product in products_list %}
-                            <div class="col-12 col-lg-6 mb-5">
+                            <div class="col-12 col-md-6 col-xxl-4 my-3">
                                 <div class="wrapper">
                                     <div class="flipping-card">
                                         <input type="checkbox" id="card{{ forloop.counter0 }}" class="more" aria-hidden="true">
                                         <div class="content">
-                                            <div class="front" style="background-image: url('{{ product.photo_main.url }}')">
-                                                <div class="inner">
-                                                    <h2 class="fw-bold">{{ product.name }}</h2>
-                                                    <label for="card{{ forloop.counter0 }}" class="button-flipping-card" aria-hidden="true">
-                                                        Ver detalle
-                                                    </label>
+                                            <div class="front">
+                                                <div class="row h-100 w-100 m-0">
+                                                    <div class="col-12 p-0 w-100 img-container">
+                                                            <img src="{{ product.photo_main.url }}" class="w-100 h-100" alt="">
+                                                    </div>
+                                                    <div class="col-12 p-3 title-container d-flex flex-column justify-content-between">
+                                                        <h2 class="fw-bold main-title">{{ product.name }}</h2>
+                                                        <label for="card{{ forloop.counter0 }}" aria-hidden="true" class="btn text-white button details-button w-50 w-lg-100">
+                                                            Ver detalle
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="back">
@@ -89,7 +94,7 @@
                                                         <ul>
                                                             {% for variant in variants_list %}
                                                                 {% if variant.product.id == product.id %}
-                                                                <li>{{ variant.value }} {{ variant.unit_measurement }}</li>
+                                                                <li>{{ variant.value }}</li>
                                                                 {% endif%}
                                                             {% endfor %}
                                                         </ul>
