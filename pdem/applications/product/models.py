@@ -7,7 +7,7 @@ class Product(models.Model):
     name = models.CharField('nombre', max_length=150)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     description = models.CharField('descripción', max_length=250, blank=True)
-    photo_main = models.ImageField('imagen', upload_to='photos/products/', blank=True)
+    photo_main = models.ImageField('imagen', upload_to='products/', blank=True)
     is_top = models.BooleanField('producto_top', default=False)
 
     class Meta:

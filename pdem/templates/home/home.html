@@ -93,14 +93,14 @@
                                         class="overlay-image"
                                     >
                                     </div>
-                                    <form class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
+                                    <div class="carousel-caption d-block" method="GET" action="{% url 'products' %}">
                                         <h2 class="fw-bold text-dark">{{ product.name }}</h2>
-                                        <p class="text-dark">
+                                        <p class="text-dark fw-bold">
                                         {{ product.description }}
                                         </p>
                                         <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
                                         <button class="btn button details-button fw-bold mb-3 text-white" type="submit">Ver más</button>
-                                    </form>
+                                    </div>
                                 </div>
                                 {% else %}
                                 <div class="carousel-item">
@@ -111,7 +111,7 @@
                                     </div>
                                     <div class="carousel-caption d-block">
                                         <h2 class="fw-bold text-dark">{{ product.name }}</h2>
-                                        <p class="text-dark">
+                                        <p class="text-dark fw-bold">
                                         {{ product.description }}
                                         </p>
                                         <a class="btn button details-button fw-bold mb-3 text-white" href="products?kword={{ product.name }}">Ver más</a>

@@ -20,13 +20,13 @@ class ProductAdmin(admin.ModelAdmin):
     ]
 
 
-class VariantAdmin(admin.ModelAdmin):
-    list_display = ('id', 'product', 'value')
-    list_display_links = ('id', 'product')
-    list_filter = ('product',)
-    search_fields = ('product',)
-    list_per_page = 25
+# class VariantAdmin(admin.ModelAdmin):
+#     list_display = ('id', 'product', 'value')
+#     list_display_links = ('id', 'product')
+#     list_filter = ('product',)
+#     search_fields = ('product',)
+#     list_per_page = 25
 
 
 admin.site.register(Product, ProductAdmin)
-admin.site.register(Variant, VariantAdmin)
+# admin.site.register(Variant, VariantAdmin)
