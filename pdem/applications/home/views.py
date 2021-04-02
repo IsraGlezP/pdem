@@ -30,7 +30,7 @@ class Products(ListView):
         context['variants_list'] = Variant.objects.all()
 
         # Add in a QuerySet of all the categories
-        context["categories_list"] = Category.objects.all()
+        context["categories_list"] = Category.objects.filter(is_published=True)
 
         if 'category' in self.request.GET:
             category = self.request.GET.get('category', '')
