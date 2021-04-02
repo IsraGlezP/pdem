@@ -15,7 +15,7 @@ DATABASES = {
         'USER': get_secret('USER'),
         'PASSWORD': get_secret('PASSWORD'),
         'HOST': 'localhost',
-        'PORT': '5432'
+        # 'PORT': '5432'
     }
 }
 
