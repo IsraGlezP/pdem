@@ -3,7 +3,7 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['162.243.163.62']
+ALLOWED_HOSTS = ['162.243.163.62', 'curadent.mx', 'www.curadent.mx']
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
