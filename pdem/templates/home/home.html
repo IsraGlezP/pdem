@@ -97,8 +97,7 @@
                                     <p class="text-dark fw-bold">
                                     {{ product.description }}
                                     </p>
-                                    <input type="hidden" id="kword" name="kword" value="{{ product.name }}">
-                                    <a class="btn button details-button fw-bold mb-3 text-white" type="submit">Ver más</a>
+                                    <a class="btn button details-button fw-bold mb-3 text-white" href="products?kword={{ product.name }}">Ver más</a>
                                 </div>
                             </div>
                             {% else %}

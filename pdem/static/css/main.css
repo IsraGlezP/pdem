@@ -10,10 +10,6 @@
     --time: 0.707s;
 }
 
-.body-wrapper {
-    overflow-x: hidden;
-}
-
 html, body {
     overflow-x: hidden;
 }
