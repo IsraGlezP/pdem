@@ -21,7 +21,7 @@
     <div class="primary-background">
         <div class="container-md">
             <!-- Title and image -->
-            <div class="row py-3 px-1">
+            <div class="row py-3 px-1 px-md-3 px-xl-5">
                 <div class="col-12 col-md-7 col-lg-6 mt-5">
                 <!-- <div class="col-12"> -->
                     <h1 class="fw-bold text-center text-white m-0">Curadent</h1>
@@ -59,13 +59,13 @@
     
     <!-- Products Carousel -->
     <div class="container-md">
-        <div class="row justify-content-center pt-3 px-1">
+        <div class="row justify-content-center pt-3 px-1 px-md-3 px-xl-5">
             <div class="col text-center mt-5">
                 <h2 class="fw-bold main-title m-0">Productos Destacados</h2>
             </div>
         </div>
-        <div class="row justify-content-center pb-3 px-1">
-            <div class="col-12 col-xxl-8 my-5">
+        <div class="row justify-content-center pb-3 px-1 px-md-3 px-xl-5">
+            <div class="col-12 col-lg-10 col-xxl-8 my-5">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <ol class="carousel-indicators">
                         {% for product in products_list %}
@@ -151,14 +151,14 @@
     <!-- Categories -->
     <div class="primary-background">
         <div class="container">
-            <div class="row pt-3 px-1">
+            <div class="row pt-3 px-1 px-md-3 px-xl-5">
                 <div class="col-12 mt-5 text-center">
                     <h2 class="fw-bold text-white m-0">Categorías</h2>
                 </div>
             </div>
             
             <!-- Cards -->
-            <div class="row mt-5 slick-container px-1">
+            <div class="row mt-5 slick-container px-1 px-md-3 px-xl-5">
                 <div class="col">
                     <i class="fas fa-chevron-left prev"></i>
                     <div class="dots"></div>
@@ -167,7 +167,7 @@
                 <div class="col-12 slider">
                     {% if object_list %}
                         {% for category in categories_list %}
-                        <div class="card-category p-3 pt-4">
+                        <div class="card-category p-3 pt-4 mx-lg-3">
                             <img src="{{ category.photo_main.url }}"/>
                             <div class="info">
                                 <h2 class="fw-bold text-wrap category-title">{{ category.name }}</h2>
@@ -192,13 +192,13 @@
 
     <!-- Address -->
     <div class="container-md">
-        <div class="row pt-3 px-1">
+        <div class="row pt-3 px-1 px-md-3 px-xl-5">
             <div class="col-12 mt-5 text-center">
                 <h2 class="fw-bold main-title m-0">¿Dónde nos encuentras?</h2>
             </div>
         </div>
-        <div class="row pb-3 px-1 justify-content-lg-center">
-            <div class="col-12 col-lg-6 mt-5 mb-3">
+        <div class="row pb-3 px-1 px-md-3 px-xl-5 justify-content-lg-center">
+            <div class="col-12 col-lg-6 mt-5 mb-3 mb-lg-5">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15064.789324578149!2d-99.65858!3d19.273783!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x83a5d753a8a41885!2sDeposito%20De%20Productos%20Dentales%20Y%20Equipos%20Medicos!5e0!3m2!1sen!2smx!4v1617762937726!5m2!1sen!2smx" 
                     class="w-100"
                     height="200" 
