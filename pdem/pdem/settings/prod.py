@@ -23,8 +23,6 @@ DATABASES = {
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-# STATIC_URL = '/static/'
-# STATICFILES_DIRS = [BASE_DIR.child('static')]
 AWS_ACCESS_KEY_ID = get_secret('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = get_secret('AWS_SECRET_ACCESS_KEY')
 
@@ -39,6 +37,3 @@ STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 DEFAULT_FILE_STORAGE = 'pdem.storage_backends.MediaStorage' #the media storage configurations
 
 STATICFILES_DIRS = [BASE_DIR.child('static')]
-
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = BASE_DIR.child('media')

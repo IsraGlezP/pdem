@@ -10,12 +10,7 @@
     --time: 0.707s;
 }
 
-html, body {
-    overflow-x: hidden;
-}
-
 body {
-    position: relative;
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
@@ -60,7 +55,7 @@ a {
     position: sticky;
     position: -webkit-sticky;
     top: 0px;
-    padding: 2rem;
+    padding: 2rem 0rem;
     z-index: 1;
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
