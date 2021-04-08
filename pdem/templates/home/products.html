@@ -13,8 +13,8 @@
 {% block content %}
 <main class="secondary-background">
     <!-- Breadcrumb -->
-    <div class="container p-0">
-        <div class="row p-3 m-0">
+    <div class="container-md p-0">
+        <div class="row py-3 m-0">
             <div class="col">
                 <div class="card">
                     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -35,8 +35,8 @@
     <!-- Ends breadcrumb -->
 
     <!-- Filter panel and products -->
-    <div class="container py-3">
-        <div class="row p-3 align-items-center">
+    <div class="container-md">
+        <div class="row py-3 align-items-center">
             <div class="col-12">
                 <nav class="navbar filter-navbar">
                     <div class="container-fluid">
@@ -64,12 +64,38 @@
                     <button class="btn btn-search" type="submit">Buscar</button>
                 </form>
             </div>
-            <div class="col-12 mt-4">
-                <div class="card products-card">
+            <div class="col-12 mt-3">
+                <div class="card products-card p-2">
                     <div class="row">
                         {% if products_list %}
                             {% for product in products_list %}
-                            <div class="col-12 col-md-6 col-xxl-4 my-3">
+
+                            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                                <div class="card product-card">
+                                    <img src="{{ product.photo_main.url }}">
+                                    <div class="card-body">
+                                        <h3 class="fw-bold main-title">{{ product.name }}</h3>
+                                        <hr>
+                                        <button class="btn text-white button details-button w-50 w-lg-100" type="button" data-bs-toggle="collapse" data-bs-target="#product-collapse-{{ forloop.counter0 }}" aria-expanded="false" aria-controls="product-collapse-{{ forloop.counter0 }}">
+                                            Ver detalle
+                                        </button>
+                                        <div class="collapse pt-3" id="product-collapse-{{ forloop.counter0 }}">
+                                            <p>{{ product.description }}</p>
+                                            <div class="variant-container">
+                                                <ul class="m-0 p-0">
+                                                    {% for variant in variants_list %}
+                                                        {% if variant.product.id == product.id %}
+                                                        <li>{{ variant.value }}</li>
+                                                        {% endif%}
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="col-12 col-md-6 col-xxl-4">
                                 <div class="wrapper">
                                     <div class="flipping-card">
                                         <input type="checkbox" id="card{{ forloop.counter0 }}" class="more" aria-hidden="true">
@@ -108,10 +134,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             {% endfor %}
                         {% else %}
-                        <div class="col">
+                        <div class="col p-3">
                             <h2>No se han encontrado resultados.</h2>
                             <p>Intente con otros parámetros de búsqueda.</p>
                         </div>

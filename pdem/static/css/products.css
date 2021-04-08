@@ -35,6 +35,16 @@
     color: var(--clr-primary);
 }
 
+/* Product cards */
+.product-card img {
+    height: 16rem;
+}
+
+.variant-container {
+    max-height: 10rem; 
+    overflow-y: scroll;
+}
+
 /* Flipping cards */     
 .wrapper {
     display: flex;
@@ -220,6 +230,12 @@
 
 .title-container {
     height: 35%;
+}
+
+@media screen and (min-width: 576px) {
+    .product-card img {
+        height: 18rem;
+    }
 }
 
 @media screen and (min-width: 992px) {
