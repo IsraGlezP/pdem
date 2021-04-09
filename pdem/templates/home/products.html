@@ -13,18 +13,18 @@
 {% block content %}
 <main class="secondary-background">
     <!-- Breadcrumb -->
-    <div class="container-md p-0">
+    <div class="container-md">
         <div class="row py-3 m-0">
-            <div class="col">
+            <div class="col px-0">
                 <div class="card">
                     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                         <ol class="breadcrumb px-3 pt-3">
                             <li class="breadcrumb-item"><a href="{% url 'home' %}">Inicio</a></li>
                             {% if category_filter %}
-                            <li class="breadcrumb-item" aria-current="page"><a href="{% url 'products' %}">Productos</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'products' %}">Productos</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{ category_filter|first }}</li>
                             {% else %}
-                            <li class="breadcrumb-item active" aria-current="page">Productos</li>
+                            <li class="breadcrumb-item" aria-current="page"><a href="{% url 'products' %}" class="active">Productos</a></li>
                             {% endif %}
                         </ol>
                     </nav>
@@ -66,11 +66,11 @@
             </div>
             <div class="col-12 mt-3">
                 <div class="card products-card p-2">
-                    <div class="row">
+                    <div class="row justify-content-center justify-content-md-start">
                         {% if products_list %}
                             {% for product in products_list %}
 
-                            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                            <div class="col-10 col-sm-8 col-md-6 col-xl-4 col-xxl-3 my-3 p-md-3">
                                 <div class="card product-card">
                                     <img src="{{ product.photo_main.url }}">
                                     <div class="card-body">
@@ -82,7 +82,7 @@
                                         <div class="collapse pt-3" id="product-collapse-{{ forloop.counter0 }}">
                                             <p>{{ product.description }}</p>
                                             <div class="variant-container">
-                                                <ul class="m-0 p-0">
+                                                <ul class="">
                                                     {% for variant in variants_list %}
                                                         {% if variant.product.id == product.id %}
                                                         <li>{{ variant.value }}</li>
