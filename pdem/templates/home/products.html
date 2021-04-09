@@ -94,47 +94,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- <div class="col-12 col-md-6 col-xxl-4">
-                                <div class="wrapper">
-                                    <div class="flipping-card">
-                                        <input type="checkbox" id="card{{ forloop.counter0 }}" class="more" aria-hidden="true">
-                                        <div class="content">
-                                            <div class="front">
-                                                <div class="row h-100 w-100 m-0">
-                                                    <div class="col-12 p-0 w-100 img-container">
-                                                            <img src="{{ product.photo_main.url }}" class="w-100 h-100" alt="">
-                                                    </div>
-                                                    <div class="col-12 p-3 title-container d-flex flex-column justify-content-between">
-                                                        <h2 class="fw-bold main-title">{{ product.name }}</h2>
-                                                        <label for="card{{ forloop.counter0 }}" aria-hidden="true" class="btn text-white button details-button w-50 w-lg-100">
-                                                            Ver detalle
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back">
-                                                <div class="inner">
-                                                    <div class="description">
-                                                        <p>{{ product.description }}</p>
-                                                        <ul>
-                                                            {% for variant in variants_list %}
-                                                                {% if variant.product.id == product.id %}
-                                                                <li>{{ variant.value }}</li>
-                                                                {% endif%}
-                                                            {% endfor %}
-                                                        </ul>
-                                                    </div>
-                                                    <div class="location fw-bold main-title">{{ product.name }}</div>
-                                                    <label for="card{{ forloop.counter0 }}" class="button-flipping-card return" aria-hidden="true">
-                                                        <i class="fas fa-arrow-left"></i>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                             {% endfor %}
                         {% else %}
                         <div class="col p-3">
