@@ -2,7 +2,8 @@
     color: #6c757d;
 }
 
-.breadcrumb-item.active {
+.breadcrumb-item.active,
+.breadcrumb-item a.active {
     color: var(--clr-secondary);
 }
 
@@ -35,201 +36,40 @@
     color: var(--clr-primary);
 }
 
-/* Flipping cards */     
-.wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-  
-.flipping-card {
-    width: 100%;
-    min-height: 30rem;
-    margin: 1em;
-    perspective: 1500px;
+/* Product cards */
+.product-card img {
+    height: 16rem;
 }
 
-.flipping-card .content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.75, 0, 0.85, 1);
-}
-  
-.more {
-    display: none;
+.variant-container {
+    max-height: 10rem; 
+    overflow-y: auto;
 }
 
-.more:checked ~ .content {
-    transform: rotateY(180deg);
+.variant-container ul {
+    list-style-type: disc;
 }
 
-.front {
-    background-color: #fff;
-    border: 1px solid #eee;
-}
-  
-.front,
-.back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    border-radius: 6px;
-}
-
-.front .inner,
-.back .inner {
-    height: 100%;
-    display: grid;
-    padding: 1.2rem;
-    transform: translateZ(80px) scale(0.94);
-}
-  
-/* .front {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom center;
-} */
-
-/* .front:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 6px;
-    backface-visibility: hidden;
-    background: linear-gradient(40deg, rgba(67, 138, 243, 0.2), rgba(78, 129, 240, 0.2));
-} */
-
-/* .front .inner {
-    grid-template-rows: 5fr 1fr 1fr 2fr 1fr;
-    justify-items: center;
-} */
-
-/* .front h2 {
-    grid-row: 1;
-    margin-bottom: 0.3em;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #000;
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-} */
-  
-.back {
-    transform: rotateY(180deg);
-    background-color: #fff;
-    border: 2px solid #f0f0f0;
-    /* opacity: 0; */
-}
-
-.back .inner {
-    /* grid-template-rows: 1fr 2fr 1fr 2fr 14fr 1fr 1fr; */
-    grid-template-rows: 1fr 2fr 14fr 1fr 1fr;
-    grid-template-columns: repeat(4, auto);
-    grid-column-gap: 0.8em;
-    justify-items: center;
-}
-
-.back .description {
-    grid-row: 3;
-    grid-column: 1/-1;
-    border-radius: 5px;
-    line-height: 1.5;
-    overflow: auto;
-    color: #000;
-    padding-right: 10px;
-}
-
-.back .description ul {
-    list-style-type: circle;
-    color: #000;
-}
-
-.back .description ul li {
-    margin: 1rem;
-}
-
-.back .location {
-    grid-row: 1;
-}
-
-.back .location {
-    grid-column: 1/4;
-    justify-self: left;
-}
-
-.back .button {
-    grid-column: 1/-1;
-    justify-self: center;
-}
-  
-.button-flipping-card {
-    grid-row: -1;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    cursor: pointer;
-    display: block;
-    padding: 0 1.5em;
-    height: 3em;
-    line-height: 2.9em;
-    min-width: 3em;
-    background-color: transparent;
-    border: solid 2px var(--clr-secondary);
-    background-color: var(--clr-secondary);
-    color: #fff;
-    border-radius: 4px;
-    text-align: center;
-    left: 50%;
-    backface-visibility: hidden;
-    transition: 0.3s ease-in-out;
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-.button-flipping-card:hover {
-    background-color: var(--clr-accent);
-    /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); */
-    text-shadow: none;
-    color: #fff;
-}
-
-.button-flipping-card.return {
-    line-height: 3em;
-    color: #fff;
-    border-color: var(--clr-secondary);
-    text-shadow: none;
-}
-
-.button-flipping-card.return:hover {
-    background-color: var(--clr-accent);
-    color: #fff;
-    box-shadow: none;
-}
-
-.img-container {
-    height: 65%;
-}
-
-.title-container {
-    height: 35%;
+@media screen and (min-width: 576px) {
+    .product-card img {
+        height: 18rem;
+    }
 }
 
 @media screen and (min-width: 992px) {
-    .flipping-card {
-        height: 28rem;
+    .product-card img {
+        height: 24rem;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .flipping-card {
-        height: 25rem;
+    .product-card img {
+        height: 20rem;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .product-card img {
+        height: 14rem;
     }
 }
