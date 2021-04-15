@@ -40,7 +40,11 @@
 }
 
 .product-card img {
+<<<<<<< HEAD
     height: 24rem;
+=======
+    height: 20rem;
+>>>>>>> experimental
 }
 
 .variant-container {
@@ -55,12 +59,27 @@
 @media screen and (min-width: 576px) {
     .product-card img {
         height: 16rem;
+<<<<<<< HEAD
+=======
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .product-card img {
+        height: 12rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .product-card img {
+        height: 12rem;
+>>>>>>> experimental
     }
 }
 
 @media screen and (min-width: 992px) {
     .product-card img {
-        height: 24rem;
+        height: 18rem;
     }
 }
 
