@@ -65,76 +65,40 @@
                 </form>
             </div>
             <div class="col-12 mt-3">
-                <div class="card products-card p-2">
-                    <div class="row justify-content-center justify-content-md-start">
+                <!-- <div class="card products-card p-2"> -->
+                    <div class="row justify-content-center justify-content-sm-start">
                         {% if products_list %}
                             {% for product in products_list %}
-
-                            <div class="col-10 col-sm-8 col-md-6 col-xl-4 col-xxl-3 my-3 p-md-3">
+                            <div class="col-12 col-sm-6 col-md-4 col-xxl-3 my-3">
                                 <div class="card product-card">
                                     <img src="{{ product.photo_main.url }}">
-                                    <div class="card-body">
-                                        <h3 class="fw-bold main-title">{{ product.name }}</h3>
-                                        <hr>
-                                        <button class="btn text-white button details-button w-50 w-lg-100" type="button" data-bs-toggle="collapse" data-bs-target="#product-collapse-{{ forloop.counter0 }}" aria-expanded="false" aria-controls="product-collapse-{{ forloop.counter0 }}">
-                                            Ver detalle
-                                        </button>
-                                        <div class="collapse pt-3" id="product-collapse-{{ forloop.counter0 }}">
-                                            <p>{{ product.description }}</p>
-                                            <div class="variant-container">
-                                                <ul class="">
-                                                    {% for variant in variants_list %}
-                                                        {% if variant.product.id == product.id %}
-                                                        <li>{{ variant.value }}</li>
-                                                        {% endif%}
-                                                    {% endfor %}
-                                                </ul>
+                                    <div class="card-body d-flex flex-column justify-content-around">
+                                        <div>
+                                            <h3 class="fw-bold main-title">{{ product.name }}</h3>
+                                        </div>
+                                        <div>
+                                            <hr>
+                                        </div>
+                                        <div>
+                                            <button class="btn text-white button details-button w-50 w-lg-100" type="button" data-bs-toggle="collapse" data-bs-target="#product-collapse-{{ forloop.counter0 }}" aria-expanded="false" aria-controls="product-collapse-{{ forloop.counter0 }}">
+                                                Ver detalle
+                                            </button>
+                                            <div class="collapse pt-3" id="product-collapse-{{ forloop.counter0 }}">
+                                                <p>{{ product.description }}</p>
+                                                <div class="variant-container">
+                                                    <ul class="">
+                                                        {% for variant in variants_list %}
+                                                            {% if variant.product.id == product.id %}
+                                                            <li>{{ variant.value }}</li>
+                                                            {% endif%}
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- <div class="col-12 col-md-6 col-xxl-4">
-                                <div class="wrapper">
-                                    <div class="flipping-card">
-                                        <input type="checkbox" id="card{{ forloop.counter0 }}" class="more" aria-hidden="true">
-                                        <div class="content">
-                                            <div class="front">
-                                                <div class="row h-100 w-100 m-0">
-                                                    <div class="col-12 p-0 w-100 img-container">
-                                                            <img src="{{ product.photo_main.url }}" class="w-100 h-100" alt="">
-                                                    </div>
-                                                    <div class="col-12 p-3 title-container d-flex flex-column justify-content-between">
-                                                        <h2 class="fw-bold main-title">{{ product.name }}</h2>
-                                                        <label for="card{{ forloop.counter0 }}" aria-hidden="true" class="btn text-white button details-button w-50 w-lg-100">
-                                                            Ver detalle
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back">
-                                                <div class="inner">
-                                                    <div class="description">
-                                                        <p>{{ product.description }}</p>
-                                                        <ul>
-                                                            {% for variant in variants_list %}
-                                                                {% if variant.product.id == product.id %}
-                                                                <li>{{ variant.value }}</li>
-                                                                {% endif%}
-                                                            {% endfor %}
-                                                        </ul>
-                                                    </div>
-                                                    <div class="location fw-bold main-title">{{ product.name }}</div>
-                                                    <label for="card{{ forloop.counter0 }}" class="button-flipping-card return" aria-hidden="true">
-                                                        <i class="fas fa-arrow-left"></i>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                             {% endfor %}
                         {% else %}
                         <div class="col p-3">
@@ -146,7 +110,7 @@
 
                     <!-- Pagination -->
                     {% if is_paginated %}
-                    <div class="row pb-3 px-3">
+                    <div class="row pt-3 px-3">
                         <div class="col-12 d-flex justify-content-center">
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination">
@@ -193,7 +157,7 @@
                     </div>
                     {% endif %}
                     <!-- Ends pagination -->
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>
