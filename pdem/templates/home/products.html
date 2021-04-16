@@ -109,6 +109,7 @@
                     </div>
 
                     <!-- Pagination -->
+                    {% load my_tags %}
                     {% if is_paginated %}
                     <div class="row pt-3 px-3">
                         <div class="col-12 d-flex justify-content-center">
@@ -116,7 +117,7 @@
                                 <ul class="pagination">
                                     {% if page_obj.has_previous %}
                                     <li class="page-item">
-                                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                        <a class="page-link" href="?{% param_replace page=page_obj.previous_page_number %}" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                         </a>
                                     </li>
@@ -131,16 +132,16 @@
                                     {% for page in paginator.page_range %}
                 
                                     {% ifequal page page_obj.number %}
-                                    <li class="page-item active"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                                    <li class="page-item active"><a class="page-link" href="?{% param_replace page=page %}">{{ page }}</a></li>
                                     {% else %}
-                                    <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                                    <li class="page-item"><a class="page-link" href="?{% param_replace page=page %}">{{ page }}</a></li>
                                     {% endifequal %}
                 
                                     {% endfor %}
                 
                                     {% if page_obj.has_next %}
                                     <li class="page-item">
-                                        <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                        <a class="page-link" href="?{% param_replace page=page_obj.next_page_number %}" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                         </a>
                                     </li>
