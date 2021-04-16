@@ -19,7 +19,7 @@ class Home(ListView):
 class Products(ListView):
     context_object_name = 'products_list'
     model = Product
-    paginate_by = 1
+    paginate_by = 2
     template_name = 'home/products.html'
 
     def get_context_data(self, **kwargs):
