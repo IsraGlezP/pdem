@@ -41,7 +41,6 @@
 
 .product-card img {
     height: 15rem;
-    /* object-fit: cover; */
 }
 
 .variant-container {
@@ -62,12 +61,6 @@
 @media screen and (min-width: 460px) {
     .product-card img {
         height: 22rem;
-    }
-}
-
-@media screen and (min-width: 460px) {
-    .product-card img {
-        height: 24rem;
     }
 }
 
