@@ -40,7 +40,8 @@
 }
 
 .product-card img {
-    height: 22rem;
+    height: 15rem;
+    /* object-fit: cover; */
 }
 
 .variant-container {
@@ -50,6 +51,24 @@
 
 .variant-container ul {
     list-style-type: disc;
+}
+
+@media screen and (min-width: 400px) {
+    .product-card img {
+        height: 18rem;
+    }
+}
+
+@media screen and (min-width: 460px) {
+    .product-card img {
+        height: 22rem;
+    }
+}
+
+@media screen and (min-width: 460px) {
+    .product-card img {
+        height: 24rem;
+    }
 }
 
 @media screen and (min-width: 576px) {
@@ -78,6 +97,6 @@
 
 @media screen and (min-width: 1400px) {
     .product-card img {
-        height: 14rem;
+        height: 16rem;
     }
 }
