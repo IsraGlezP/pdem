@@ -32,6 +32,20 @@ class Products(ListView):
         # Add in a QuerySet of all the categories
         context["categories_list"] = Category.objects.filter(is_published=True)
 
+        paginator = context.get('paginator')
+        num_pages = paginator.num_pages
+        current_page = context.get('page_obj')
+        page_no = current_page.number
+
+        if num_pages <= 11 or page_no <= 6:
+            pages = [x for x in range(1, min(num_pages + 1, 12))]
+        elif page_no > num_pages - 6:
+            pages = [x for x in range(num_pages - 10, num_pages + 1)]
+        else:  # case 3
+            pages = [x for x in range(page_no - 5, page_no + 6)]
+
+        context.update({'pages': pages})
+
         if 'category' in self.request.GET:
             category = self.request.GET.get('category', '')
             if category:
