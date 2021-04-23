@@ -13,7 +13,7 @@ def param_replace(context, **kwargs):
     return d.urlencode()
 
 @register.filter
-def page_window(page, last, size=7):
+def page_window(page, last, size=5):
     if page < size // 2 + 1:
         return range(1, min(size+1, last + 1)) # remember the range function won't 
                                                 # include the upper bound in the output
