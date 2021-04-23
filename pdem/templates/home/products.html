@@ -145,6 +145,17 @@
                                             {{ i }}
                                         </a>
                                     {% endfor %}
+
+                                    {% for page_number in page_obj.number|page_window:page_obj.paginator.num_pages  %}
+                                    <li class="page-item {% if page_number == page_obj.number %}active{% endif %}">
+                                        <a class="page-link" href="?{% param_replace page=page_number %}"></a>>
+                                            {{ page_number }} 
+                                            {% if page_number == page_obj.number %}
+                                            of {{ page_obj.paginator.num_pages }}
+                                            {% endif %}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
                 
                                     {% if page_obj.has_next %}
                                     <li class="page-item">
